@@ -6,8 +6,8 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import ClientProvider from "@/app/_ClientProviders";
 
 export const metadata: Metadata = {
-  title: "분할결제 신청하기 | 캔디페이",
-  description: "이제 간편결제도 카드 나눠서 결제해요",
+  title: "분할결제 체험 프로모션 | 캔디페이",
+  description: "카드 나눠 100원 결제하고 1,000원 받아보세요",
   appleWebApp: {
     capable: true,
   },

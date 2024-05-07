@@ -1,13 +1,15 @@
 "use server";
 import type { FunnelState } from "@/app/_funnel/index";
-import { sql } from "@vercel/postgres";
-import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
+// import { sql } from "@vercel/postgres";
+// import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import { cookies } from "next/headers";
 
 export const submit = async (state: FunnelState) => {
   const sid = cookies().get("sid");
 
   if (!sid) throw new Error("Session ID not found");
+
+  console.log("Submitting", state);
 
   // 3s delay
   await new Promise((resolve) => setTimeout(resolve, 3000));

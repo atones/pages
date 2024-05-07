@@ -4,8 +4,10 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
+  plugins: ["tailwindcss", "@typescript-eslint"],
   extends: [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
     require.resolve("@vercel/style-guide/eslint/next"),
     "eslint-config-turbo",
@@ -17,8 +19,9 @@ module.exports = {
   env: {
     node: true,
     browser: true,
+    es2021: true,
+    jest: true,
   },
-  plugins: ["only-warn"],
   settings: {
     "import/resolver": {
       typescript: {
@@ -31,5 +34,17 @@ module.exports = {
     ".*.js",
     "node_modules/",
   ],
-  overrides: [{ files: ["*.js?(x)", "*.ts?(x)"] }],
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "tailwindcss/classnames-order": "error",
+    "tailwindcss/enforces-negative-arbitrary-values": "error",
+    "tailwindcss/no-unnecessary-arbitrary-value": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_+$",
+        varsIgnorePattern: "^_+$",
+      },
+    ],
+  },
 };

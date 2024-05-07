@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+        @apply bg-gray-100 text-gray-900;
+    }
+
+    body {
+        @apply bg-white text-gray-900 accent-primary-600 lining-nums tablet:max-w-[375px] m-auto;
+    }
+}
+
+@layer base {
+    a,
+    button {
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+    }
+
+    a[role="button"],
+    a[role="button"]:hover {
+        text-decoration: inherit;
+        color: inherit;
+    }
+}
+
+@layer base {
+    button,
+    label {
+        user-select: none;
+    }
+
+    button[disabled],
+    form:invalid button,
+    button:invalid,
+    button:disabled {
+        cursor: default;
+    }
+}
+
+@layer base {
+    input,
+    select,
+    textarea {
+        outline-color: #6485f4;
+    }
+
+    input[type="number"] {
+        appearance: textfield;
+    }
+
+    details > summary {
+        list-style: none;
+    }
+}
+
+@layer base {
+    details > summary::marker,
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+}
+
+@layer base {
+    @media only screen and (min-width: 769px) {
+        *::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        *::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        *::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        *::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        *::-webkit-scrollbar-thumb:active {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    }
+}
+
+
+@layer base {
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"] {
+        -webkit-appearance: none;
+        margin: 0;
+        -moz-appearance: textfield !important;
+    }
+}
+
+
+@layer components {
+    a.btn-cta,
+    button.btn-cta {
+        @apply flex items-center justify-center w-full py-3.5 text-lg font-medium text-white transition rounded-2xl bg-primary-600;
+
+        &:invalid, &:disabled {
+            @apply bg-gray-400/70 cursor-default;
+        }
+
+        &[aria-busy="true"] {
+            @apply cursor-wait pointer-events-none bg-primary-600 opacity-50;
+        }
+    }
+
+    a.btn-alt,
+    button.btn-alt {
+        @apply block text-center w-full py-3.5 text-lg font-medium text-primary-600 transition rounded-2xl bg-white border border-primary-600;
+
+        &:invalid, &:disabled {
+            @apply bg-gray-200 border-gray-400/70 cursor-default text-gray-400;
+        }
+    }
+
+    section#cta,
+    footer#cta,
+    section.cta,
+    footer.cta {
+        @apply aria-disabled:hidden flex flex-col gap-4 items-stretch justify-center sticky bottom-0 w-full p-4 mt-auto from-transparent to-white to-15% bg-gradient-to-b;
+
+        .addition {
+            @apply flex items-center justify-center text-primary-600;
+        }
+    }
+
+    hr.divider {
+        @apply w-full h-3 bg-gray-200 mb-6;
+    }
+}
+
+
+@layer utilities {
+    @media only screen and (max-width: 768px) {
+        .scrollbar-hide {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            /* Safari and Chrome */
+            display: none;
+        }
+    }
+
+    .clickarea:valid,
+    .clickarea:not(:disabled) {
+        @apply transition-all ease-in-out active:scale-[97.5%] active:brightness-[97.5%] outline-none select-none;
+    }
+}

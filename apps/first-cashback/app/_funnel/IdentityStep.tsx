@@ -43,7 +43,7 @@ export function IdentityStep({
                   {...register("name", { required: true })}
                   defaultValue={defaultValues.name}
                   placeholder="이름"
-                  className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:bg-[#E4ECF9]"
+                  className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:border-primary-s3 focus:bg-primary-s4/10"
                 />
               </Field>
               <Field className="flex flex-col gap-2">
@@ -57,7 +57,7 @@ export function IdentityStep({
                   })}
                   defaultValue={defaultValues.phone}
                   placeholder="휴대폰 번호"
-                  className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:bg-[#E4ECF9]"
+                  className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:border-primary-s3 focus:bg-primary-s4/10"
                 />
               </Field>
             </Fieldset>

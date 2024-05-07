@@ -72,7 +72,7 @@ export function AccountStep({
       content={
         <main className="p-4">
           <form id="form" onSubmit={handleSubmit(onSubmit)}>
-            <Legend content="어떤 계좌로 받을까요?" />
+            <Legend content="입금받을 계좌를 알려주세요" />
             <Fieldset className="flex flex-col gap-6">
               <Field className="flex flex-col gap-2">
                 <Label className="text-sm text-gray-500">계좌번호</Label>
@@ -82,7 +82,7 @@ export function AccountStep({
                   {...register("no", { required: true, minLength: 7 })}
                   defaultValue={defaultValues.no}
                   placeholder="계좌번호 입력"
-                  className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:bg-[#E4ECF9]"
+                  className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:border-primary-s3 focus:bg-primary-s4/10"
                 />
               </Field>
               <Field className="flex flex-col gap-2">
@@ -91,7 +91,7 @@ export function AccountStep({
                   <Select
                     {...register("bank", { required: true })}
                     defaultValue={defaultValues.bank ?? ""}
-                    className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:bg-[#E4ECF9]"
+                    className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:border-primary-s3 focus:bg-primary-s4/10"
                   >
                     <option disabled value="">
                       은행 선택

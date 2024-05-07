@@ -1,12 +1,14 @@
 import type { Config } from "tailwindcss";
-import {
-  blue as primary,
-  gray,
-  black,
-  transparent,
-  white,
-} from "tailwindcss/colors";
+import { gray, black, transparent, white } from "tailwindcss/colors";
 import headless from "@headlessui/tailwindcss";
+
+const orange = {
+  s5: "#ff7720",
+  s4: "#ff8d4e",
+  s3: "#ffcbae",
+  s2: "#ffe0cb",
+  s1: "#ffe7d7",
+} as const;
 
 const config: Config = {
   content: [
@@ -31,7 +33,7 @@ const config: Config = {
       black,
       gray,
       transparent,
-      primary,
+      primary: orange,
     },
   },
   plugins: [headless({ prefix: "ui" })],

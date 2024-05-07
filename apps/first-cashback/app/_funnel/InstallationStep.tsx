@@ -41,9 +41,9 @@ export function InstallationStep({
               <Checkbox
                 checked={installed}
                 onChange={setInstalled}
-                className="flex cursor-pointer select-none items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 p-4 text-lg font-semibold text-gray-700 focus:outline-none ui-checked:border-primary-200 ui-checked:bg-primary-50 ui-checked:text-primary-500"
+                className="flex cursor-pointer select-none items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 p-4 text-lg font-semibold text-gray-700 focus:outline-none ui-checked:border-primary-s3 ui-checked:bg-primary-s5/10 ui-checked:text-primary-s5"
               >
-                <CheckIcon className="size-6 text-gray-400 ui-checked:text-primary-500" />
+                <CheckIcon className="size-6 text-gray-400 ui-checked:text-primary-s5" />
                 설치했어요
               </Checkbox>
               <Link

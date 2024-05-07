@@ -2,6 +2,7 @@
 import { InstallationStep } from "./InstallationStep";
 import { IdentityStep } from "./IdentityStep";
 import { AccountStep } from "./AccountStep";
+import { PaymentStep } from "./PaymentStep";
 import { EndStep } from "./EndStep";
 import useFunnel from "next-use-funnel";
 import { submit } from "./actions";
@@ -21,7 +22,7 @@ export type FunnelState = {
 
 export default function ExampleFunnel() {
   const [Funnel, state, setState] = useFunnel(
-    ["installation", "identity", "account", "end"] as const,
+    ["installation", "identity", "account", "payment", "end"] as const,
     {
       initialStep: "installation",
     },
@@ -54,8 +55,13 @@ export default function ExampleFunnel() {
           defaultValues={state.account}
           next={async (account) => {
             await submit(state as FunnelState);
-            setState((prev) => ({ ...prev, account, step: "end" }));
+            setState((prev) => ({ ...prev, account, step: "payment" }));
           }}
+        />
+      </Funnel.Step>
+      <Funnel.Step name="payment">
+        <PaymentStep
+          next={() => setState((prev) => ({ ...prev, step: "end" }))}
         />
       </Funnel.Step>
       <Funnel.Step name="end">

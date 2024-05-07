@@ -38,6 +38,8 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "tailwindcss/classnames-order": "error",
     "tailwindcss/enforces-negative-arbitrary-values": "error",
+    "tailwindcss/no-custom-classname": "warn",
+    "tailwindcss/no-contradicting-classname": "error",
     "tailwindcss/no-unnecessary-arbitrary-value": "error",
     "@typescript-eslint/no-unused-vars": [
       "error",

@@ -16,10 +16,7 @@ export function IdentityStep({
   defaultValues?: Partial<FormValues>;
   next: (values: FormValues) => void;
 }) {
-  const { register, handleSubmit, formState } = useForm<FormValues>({
-    defaultValues,
-  });
-  const { isSubmitting, isValidating, isValid } = formState;
+  const { register, handleSubmit } = useForm<FormValues>({ defaultValues });
 
   const onSubmit: SubmitHandler<FormValues> = (values) => {
     next(values);
@@ -66,13 +63,7 @@ export function IdentityStep({
       }
       bottomBar={
         <section id="cta" className="aria-disabled:hidden">
-          <Button
-            aria-busy={isSubmitting || isValidating}
-            disabled={!isValid || isSubmitting || isValidating}
-            type="submit"
-            form="form"
-            className="btn-cta clickarea"
-          >
+          <Button type="submit" form="form" className="btn-cta clickarea">
             다음
           </Button>
         </section>

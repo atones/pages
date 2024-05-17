@@ -14,19 +14,26 @@ export type FunnelState = {
     name: string;
     phone: string;
   };
-  account: {
+  account: null | {
     no: string;
     bank: string;
   };
 };
 
+const steps = [
+  "installation",
+  "identity",
+  "account",
+  "installation-retry",
+  "already-exists",
+  "payment",
+  "end",
+] as const;
+
 export default function ExampleFunnel() {
-  const [Funnel, state, setState] = useFunnel(
-    ["installation", "identity", "account", "payment", "end"] as const,
-    {
-      initialStep: "installation",
-    },
-  ).withState<FunnelState>({
+  const [Funnel, state, setState] = useFunnel(steps, {
+    initialStep: "installation",
+  }).withState<FunnelState>({
     installed: false,
     identity: { name: "", phone: "" },
     account: { no: "", bank: "" },
@@ -52,10 +59,21 @@ export default function ExampleFunnel() {
       </Funnel.Step>
       <Funnel.Step name="account">
         <AccountStep
-          defaultValues={state.account}
+          defaultValues={state.account ?? {}}
           next={async (account) => {
-            await submit(state as FunnelState);
-            setState((prev) => ({ ...prev, account, step: "payment" }));
+            const s = { ...state, account } as FunnelState;
+            const message = (await submit(s))?.message;
+
+            switch (message) {
+              case "미가입":
+                return setState({ ...s, step: "installation-retry" });
+              case "기신청":
+                return setState({ ...s, step: "already-exists" });
+              case "debug":
+                return alert(message);
+              case undefined:
+                return setState({ ...s, step: "payment" });
+            }
           }}
         />
       </Funnel.Step>

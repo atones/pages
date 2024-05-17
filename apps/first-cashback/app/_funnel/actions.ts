@@ -1,23 +1,35 @@
 "use server";
 import type { FunnelState } from "@/app/_funnel/index";
-// import { sql } from "@vercel/postgres";
-// import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
-import { cookies } from "next/headers";
+import { sql } from "@vercel/postgres";
+import ky, { HTTPError as _ } from "ky";
+import { formatPhoneNumber } from "@toss/utils";
 
-export const submit = async (state: FunnelState) => {
-  const sid = cookies().get("sid");
+const __ = ky.create({
+  prefixUrl: "https://api.example.com",
+});
 
-  if (!sid) throw new Error("Session ID not found");
-
+export const submit = async (
+  state: FunnelState,
+): Promise<{ message: string } | undefined> => {
   console.log("Submitting", state);
 
-  // 3s delay
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await sql`DO $$ DECLARE existing_status smallint; BEGIN
+    SELECT status INTO existing_status FROM first_checkout WHERE name = ${state.identity.name} AND phone = ${formatPhoneNumber(state.identity.phone)};
+    IF FOUND THEN
+      IF existing_status != 0 THEN
+        RAISE EXCEPTION 'ALREADY_SUBMITTED';
+        END IF;
+    ELSE
+      INSERT INTO first_checkout (name, phone, account_no, account_bank)
+      VALUES (${state.identity.name}, ${formatPhoneNumber(state.identity.phone)}, ${state.account?.no}, ${state.account?.bank});
+    END IF;
+  END $$`.catch((e) => {
+    console.log(e);
+  });
 
-  // await sql`
-  //   INSERT INTO contacts (sid, name, phone, sajangnim)
-  //   VALUES (${sid.value}, ${state.name}, ${formatPhoneNumber(state.phone)}, ${state.sajangnim})
-  //   ON CONFLICT (sid)
-  //   DO UPDATE SET name = ${state.name}, phone = ${formatPhoneNumber(state.phone)}, sajangnim = ${state.sajangnim}
-  // `;
+  // await api
+  //   .post("비대면결제", {})
+  //   .catch((error: HTTPError) => error.response.json());
+
+  return;
 };

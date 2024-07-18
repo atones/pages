@@ -1,8 +1,8 @@
-"use client";
-import type { ActionItemProps } from "./index";
-import Link from "next/link";
+'use client'
+import type { ActionItemProps } from './index'
+import Link from 'next/link'
 
-export function ActionButton({ icon, onClick, href }: ActionItemProps) {
+export function ActionButton ({ icon, onClick, href }: ActionItemProps) {
   return (
     <div className="clickarea flex items-center justify-center rounded-lg hover:bg-gray-100">
       {href ? (
@@ -19,5 +19,5 @@ export function ActionButton({ icon, onClick, href }: ActionItemProps) {
         </button>
       )}
     </div>
-  );
+  )
 }

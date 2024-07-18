@@ -1,8 +1,8 @@
-import type { ReactElement, ReactNode } from "react";
-import { ActionButton } from "./action-button";
-import { BackButton } from "./back-button";
+import type { ReactElement, ReactNode } from 'react'
+import { ActionButton } from './action-button'
+import { BackButton } from './back-button'
 
-export { BackButton };
+export { BackButton }
 
 export interface ActionItemProps {
   icon: ReactElement;
@@ -17,11 +17,11 @@ export interface ActionBarProps {
   className?: string;
 }
 
-export function AppAction({
+export function AppAction ({
   backButton,
-  title = "",
+  title = '',
   actions = [],
-  className = "",
+  className = '',
 }: Partial<ActionBarProps>) {
   return (
     <header className={`grid select-none grid-cols-[1fr_auto] p-3 px-4 ${className}`}>
@@ -37,5 +37,5 @@ export function AppAction({
         ))}
       </div>
     </header>
-  );
+  )
 }

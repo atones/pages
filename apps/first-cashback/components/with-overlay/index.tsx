@@ -1,5 +1,5 @@
-"use client";
-import { ReactElement } from "react";
+'use client'
+import { ReactElement } from 'react'
 
 export interface OverlayProps {
   isOpen: boolean;
@@ -12,7 +12,7 @@ export const Backdrop = ({ close }: { close: () => void }) => (
     onClick={close}
     className="fixed inset-0 z-10 m-auto bg-black bg-opacity-50 tablet:max-w-[375px]"
   />
-);
+)
 
 interface SheetProps extends OverlayProps {
   className?: string;
@@ -30,7 +30,7 @@ export const Sheet = ({
   close,
 }: SheetProps) => (
   <>
-    {isOpen && <Backdrop close={close} />}
+    {isOpen && <Backdrop close={close}/>}
     {isOpen && (
       <div
         className={`fixed inset-x-0 bottom-0 z-10 m-auto rounded-t-2xl bg-white shadow-lg tablet:max-w-[375px] ${className}`}
@@ -50,4 +50,4 @@ export const Sheet = ({
       </div>
     )}
   </>
-);
+)

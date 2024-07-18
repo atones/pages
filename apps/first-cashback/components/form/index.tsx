@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { convertNewlineToJSX } from "@/utils/convertNewlineToJSX";
+import type { ReactNode } from 'react'
+import { convertNewlineToJSX } from '@/utils/convertNewlineToJSX'
 
 export const Legend = ({
   icon,
@@ -16,7 +16,7 @@ export const Legend = ({
     {icon}
     <div className="flex flex-col gap-2.5">
       <h1
-        className={`${title ? "text-3xl" : "text-2xl"} font-semibold tracking-tight`}
+        className={`${title ? 'text-3xl' : 'text-2xl'} font-semibold tracking-tight`}
       >
         {convertNewlineToJSX(content)}
       </h1>
@@ -27,7 +27,7 @@ export const Legend = ({
       )}
     </div>
   </div>
-);
+)
 
 export const Info = ({
   icon,
@@ -40,4 +40,4 @@ export const Info = ({
     <span className="font-toss-face text-xl">{icon}</span>
     <p className="font-semibold">{description}</p>
   </div>
-);
+)

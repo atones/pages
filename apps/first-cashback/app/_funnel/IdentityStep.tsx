@@ -1,30 +1,30 @@
-import { Scaffold } from "@/components/Scaffold";
-import { AppAction, BackButton } from "@/components/AppAction";
-import { Legend } from "@/components/form";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { Fieldset, Field, Label, Input, Button } from "@headlessui/react";
+import { Scaffold } from '@/components/Scaffold'
+import { AppAction, BackButton } from '@/components/AppAction'
+import { Legend } from '@/components/form'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { Fieldset, Field, Label, Input, Button } from '@headlessui/react'
 
 export interface FormValues {
   name: string;
   phone: string;
 }
 
-export function IdentityStep({
-  defaultValues = {},
-  next,
-}: {
+export function IdentityStep ({
+                                defaultValues = {},
+                                next,
+                              }: {
   defaultValues?: Partial<FormValues>;
   next: (values: FormValues) => void;
 }) {
-  const { register, handleSubmit } = useForm<FormValues>({ defaultValues });
+  const { register, handleSubmit } = useForm<FormValues>({ defaultValues })
 
   const onSubmit: SubmitHandler<FormValues> = (values) => {
-    next(values);
-  };
+    next(values)
+  }
 
   return (
     <Scaffold
-      topBar={<AppAction backButton={<BackButton />} />}
+      topBar={<AppAction backButton={<BackButton/>}/>}
       content={
         <main className="p-4">
           <form id="form" onSubmit={handleSubmit(onSubmit)}>
@@ -37,7 +37,7 @@ export function IdentityStep({
                 <Label className="text-sm text-gray-500">이름</Label>
                 <Input
                   type="text"
-                  {...register("name", { required: true })}
+                  {...register('name', { required: true })}
                   defaultValue={defaultValues.name}
                   placeholder="이름"
                   className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none focus:border-primary-s3 focus:bg-primary-s4/10"
@@ -47,7 +47,7 @@ export function IdentityStep({
                 <Label className="text-sm text-gray-500">휴대폰 번호</Label>
                 <Input
                   type="tel"
-                  {...register("phone", {
+                  {...register('phone', {
                     required: true,
                     pattern:
                       /^((\+?82)[ -]?)?0?1([0|1|6|7|8|9]{1})[ -]?\d{3,4}[ -]?\d{4}$/,
@@ -69,5 +69,5 @@ export function IdentityStep({
         </section>
       }
     />
-  );
+  )
 }

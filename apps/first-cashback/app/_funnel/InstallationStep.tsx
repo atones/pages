@@ -1,26 +1,25 @@
-"use client";
-import { Scaffold } from "@/components/Scaffold";
-import { AppAction, BackButton } from "@/components/AppAction";
-import { Legend } from "@/components/form";
-import appleIcon from "@/app/apple-icon.png";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { CheckIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
-import { Checkbox } from "@headlessui/react";
-
-export function InstallationStep({
-  defaultValue,
-  next,
-}: {
+'use client'
+import { Scaffold } from '@/components/Scaffold'
+import { AppAction, BackButton } from '@/components/AppAction'
+import { Legend } from '@/components/form'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import appleIcon from '../apple-icon.png'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import { CheckIcon, ChevronRightIcon } from '@heroicons/react/16/solid'
+import { Checkbox } from '@headlessui/react'
+ 
+export function InstallationStep ({ defaultValue, next }: {
   defaultValue: boolean;
   next: (installed: boolean) => void;
 }) {
-  const [installed, setInstalled] = useState(defaultValue);
+  const [installed, setInstalled] = useState(defaultValue)
 
   return (
     <Scaffold
-      topBar={<AppAction backButton={<BackButton />} />}
+      topBar={<AppAction backButton={<BackButton/>}/>}
       content={
         <main className="flex flex-col p-5">
           <div className="flex flex-col gap-10">
@@ -43,7 +42,7 @@ export function InstallationStep({
                 onChange={setInstalled}
                 className="flex cursor-pointer select-none items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 p-4 text-lg font-semibold text-gray-700 focus:outline-none ui-checked:border-primary-s3 ui-checked:bg-primary-s5/10 ui-checked:text-primary-s5"
               >
-                <CheckIcon className="size-6 text-gray-400 ui-checked:text-primary-s5" />
+                <CheckIcon className="size-6 text-gray-400 ui-checked:text-primary-s5"/>
                 설치했어요
               </Checkbox>
               <Link
@@ -52,7 +51,7 @@ export function InstallationStep({
                 target="_blank"
               >
                 아니요, 설치할게요
-                <ChevronRightIcon className="ml-auto h-6 w-6 text-gray-400" />
+                <ChevronRightIcon className="ml-auto h-6 w-6 text-gray-400"/>
               </Link>
             </div>
           </div>
@@ -75,5 +74,5 @@ export function InstallationStep({
         </section>
       }
     />
-  );
+  )
 }

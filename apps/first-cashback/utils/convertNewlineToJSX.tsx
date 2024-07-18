@@ -6,7 +6,7 @@ export const convertNewlineToJSX = (str: string) =>
     .split('\n')
     .map((line, index) => (
       <Fragment key={index}>
-        {index > 0 ? <br/> : null}
+        {index > 0 ? <br /> : null}
         {line}
       </Fragment>
     ))

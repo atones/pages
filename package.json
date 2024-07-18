@@ -9,8 +9,6 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "eslint": "^9",
-    "standard": "^17.1.0",
     "turbo": "latest"
   },
   "packageManager": "pnpm@9.5.0",

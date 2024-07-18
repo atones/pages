@@ -8,7 +8,7 @@ export default function ClientProvider ({ children }: PropsWithChildren) {
     <>
       <OverlayProvider>
         {children}
-        <Toaster/>
+        <Toaster />
       </OverlayProvider>
     </>
   )

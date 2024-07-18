@@ -4,7 +4,7 @@ import ExampleFunnel from './_funnel'
 export default function Home () {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <ExampleFunnel/>
+      <ExampleFunnel />
     </Suspense>
   )
 }

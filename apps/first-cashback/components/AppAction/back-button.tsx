@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { ArrowLeftIcon } from '@heroicons/react/16/solid'
 
 export interface BackButtonProps {
-  href?: string;
+  href?: string
   /**
    * @desc back: `router.back()`
    * @desc replace: `router.replace(href)`
@@ -11,7 +11,7 @@ export interface BackButtonProps {
    * @desc mixed: `if(history.length) router.back(); else router.replace(href);`
    * @default "back"
    */
-  mode?: 'back' | 'replace' | 'push' | 'mixed';
+  mode?: 'back' | 'replace' | 'push' | 'mixed'
 }
 
 export function BackButton ({ href, mode = 'back' }: BackButtonProps) {
@@ -33,8 +33,8 @@ export function BackButton ({ href, mode = 'back' }: BackButtonProps) {
             : () => router.replace(href!)
 
   return (
-    <a href={href} onClick={action} className="block w-full text-gray-800">
-      <ArrowLeftIcon width={24} height={24}/>
+    <a href={href} onClick={action} className='block w-full text-gray-800'>
+      <ArrowLeftIcon width={24} height={24} />
     </a>
   )
 }

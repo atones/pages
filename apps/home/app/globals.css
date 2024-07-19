@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+        @apply bg-gray-100 text-gray-900;
+    }
+
+    body {
+        @apply flex flex-col items-center bg-white text-gray-900 accent-primary-s5 lining-nums m-auto;
+    }
+}
+
+@layer base {
+    a,
+    button {
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+    }
+
+    a[role="button"],
+    a[role="button"]:hover {
+        text-decoration: inherit;
+        color: inherit;
+    }
+
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer base {
+    button,
+    label {
+        user-select: none;
+    }
+
+    button[disabled],
+    form:invalid button,
+    button:invalid,
+    button:disabled {
+        cursor: default;
+    }
+}
+
+@layer base {
+    input,
+    select,
+    textarea {
+        outline-color: #6485f4;
+    }
+
+    input[type="number"] {
+        appearance: textfield;
+    }
+
+    details > summary {
+        list-style: none;
+    }
+}
+
+@layer base {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li::marker,
+    details > summary::marker,
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+}
+
+@layer base {
+    @media only screen and (min-width: 769px) {
+        *::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        *::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        *::-webkit-scrollbar-thumb:active {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    }
+}
+
+
+@layer base {
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"] {
+        -webkit-appearance: none;
+        margin: 0;
+        -moz-appearance: textfield !important;
+    }
+}
+
+
+@layer utilities {
+    @media only screen and (max-width: 768px) {
+        .scrollbar-hide {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            /* Safari and Chrome */
+            display: none;
+        }
+    }
+
+    .marquee {
+        position: relative;
+        width: 100vw;
+        max-width: 100%;
+        overflow-x: hidden;
+        white-space: nowrap;
+        will-change: transform;
+    }
+
+    .track {
+        position: absolute;
+        will-change: transform;
+        animation: marquee-loop 5s linear infinite;
+    }
+
+    @keyframes marquee-loop {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}

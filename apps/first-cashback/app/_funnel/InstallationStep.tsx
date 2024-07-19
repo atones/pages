@@ -2,8 +2,6 @@
 import { Scaffold } from '@/components/Scaffold'
 import { AppAction, BackButton } from '@/components/AppAction'
 import { Legend } from '@/components/form'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import appleIcon from '../apple-icon.png'
 import Image from 'next/image'
 import Link from 'next/link'

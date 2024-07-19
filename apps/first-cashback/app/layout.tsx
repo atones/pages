@@ -15,16 +15,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: [
-    {
-      media: '(prefers-color-scheme: light)',
-      color: 'white'
-    },
-    {
-      media: '(prefers-color-scheme: dark)',
-      color: 'black'
-    }
-  ],
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
@@ -40,18 +30,18 @@ const tossFace = localFont({
 export default function RootLayout ({ children }: PropsWithChildren) {
   return (
     <html lang='en'>
-      <GoogleTagManager gtmId='G-38RPJB9ZTR' />
-      <head>
-        <link
-          rel='stylesheet'
-          as='style'
-          crossOrigin='anonymous'
-          href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css'
-        />
-      </head>
-      <body className={`${tossFace.variable} font-sans`}>
-        <ClientProvider>{children}</ClientProvider>
-      </body>
+    <GoogleTagManager gtmId='G-38RPJB9ZTR' />
+    <head>
+      <link
+        rel='stylesheet'
+        as='style'
+        crossOrigin='anonymous'
+        href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.min.css'
+      />
+    </head>
+    <body className={`${tossFace.variable} font-sans`}>
+    <ClientProvider>{children}</ClientProvider>
+    </body>
     </html>
   )
 }

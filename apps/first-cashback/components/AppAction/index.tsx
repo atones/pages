@@ -25,13 +25,13 @@ export function AppAction ({
 }: Partial<ActionBarProps>) {
   return (
     <header className={`grid select-none grid-cols-[1fr_auto] p-3 px-4 ${className}`}>
-      <div className='flex items-center gap-3'>
-        <div className='mr-auto flex items-center'>{backButton}</div>
-        <h1 className='flex min-h-8 w-full items-center align-middle text-base font-semibold leading-none'>
+      <div className="flex items-center gap-3">
+        <div className="mr-auto flex items-center">{backButton}</div>
+        <h1 className="flex min-h-8 w-full items-center align-middle text-base font-semibold leading-none">
           {title}
         </h1>
       </div>
-      <div className='ml-auto flex items-center gap-4'>
+      <div className="ml-auto flex items-center gap-4">
         {actions.map((action, idx) => (
           <ActionButton key={action.href ?? idx} {...action} />
         ))}

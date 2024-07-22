@@ -41,21 +41,21 @@ export default function ExampleFunnel () {
 
   return (
     <Funnel>
-      <Funnel.Step name='installation'>
+      <Funnel.Step name="installation">
         <InstallationStep
           defaultValue={Boolean(state.installed)}
           next={(installed) =>
             setState((prev) => ({ ...prev, installed, step: 'identity' }))}
         />
       </Funnel.Step>
-      <Funnel.Step name='identity'>
+      <Funnel.Step name="identity">
         <IdentityStep
           defaultValues={state.identity}
           next={(identity) =>
             setState((prev) => ({ ...prev, identity, step: 'account' }))}
         />
       </Funnel.Step>
-      <Funnel.Step name='account'>
+      <Funnel.Step name="account">
         <AccountStep
           defaultValues={state.account ?? {}}
           next={async (account) => {
@@ -75,12 +75,12 @@ export default function ExampleFunnel () {
           }}
         />
       </Funnel.Step>
-      <Funnel.Step name='payment'>
+      <Funnel.Step name="payment">
         <PaymentStep
           next={() => setState((prev) => ({ ...prev, step: 'end' }))}
         />
       </Funnel.Step>
-      <Funnel.Step name='end'>
+      <Funnel.Step name="end">
         <EndStep />
       </Funnel.Step>
     </Funnel>

@@ -29,14 +29,14 @@ const tossFace = localFont({
 
 export default function RootLayout ({ children }: PropsWithChildren) {
   return (
-    <html lang='en'>
-    <GoogleTagManager gtmId='G-38RPJB9ZTR' />
+    <html lang="en">
+    <GoogleTagManager gtmId="G-38RPJB9ZTR" />
     <head>
       <link
-        rel='stylesheet'
-        as='style'
-        crossOrigin='anonymous'
-        href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.min.css'
+        rel="stylesheet"
+        as="style"
+        crossOrigin="anonymous"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.min.css"
       />
     </head>
     <body className={`${tossFace.variable} font-sans`}>

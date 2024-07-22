@@ -10,26 +10,26 @@ export function EndStep () {
     <Scaffold
       topBar={<AppAction />}
       content={
-        <main className='flex flex-col p-4'>
-          <div className='flex grow items-center justify-center'>
-            <div className='flex flex-col items-center leading-tight'>
+        <main className="flex flex-col p-4">
+          <div className="flex grow items-center justify-center">
+            <div className="flex flex-col items-center leading-tight">
               <Image
-                alt='success'
+                alt="success"
                 src={ClappingHands}
                 width={128}
                 height={128}
                 unoptimized
-                className='mb-12'
+                className="mb-12"
               />
-              <p className='mb-8 text-center text-2xl font-semibold'>
+              <p className="mb-8 text-center text-2xl font-semibold">
                 {convertNewlineToJSX('축하해요!')}
               </p>
-              <p className='mb-8 text-center'>
+              <p className="mb-8 text-center">
                 {convertNewlineToJSX(
                   '앞으로도 자유롭게\n카드 나눠 결제해보세요'
                 )}
               </p>
-              <p className='text-center text-gray-500'>
+              <p className="text-center text-gray-500">
                 {convertNewlineToJSX(
                   '적어주신 계좌 정보로\n24시간 이내 입금해드려요'
                 )}
@@ -39,9 +39,9 @@ export function EndStep () {
         </main>
       }
       bottomBar={
-        <section id='cta'>
+        <section id="cta">
           <button
-            type='button'
+            type="button"
             onClick={async () =>
               await share({
                 title: '100원 결제하고 1,000원 받기',
@@ -52,7 +52,7 @@ export function EndStep () {
                   return url
                 })()
               })}
-            className='btn-cta clickarea'
+            className="btn-cta clickarea"
           >
             친구에게 공유하기
           </button>

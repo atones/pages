@@ -76,46 +76,46 @@ export function AccountStep ({
     <Scaffold
       topBar={<AppAction backButton={<BackButton />} />}
       content={
-        <main className='p-4'>
-          <form id='form' onSubmit={handleSubmit(onSubmit)}>
+        <main className="p-4">
+          <form id="form" onSubmit={handleSubmit(onSubmit)}>
             <Legend
-              content='입금받을 계좌를 알려주세요'
-              description='전화번호(토스, 카카오)로 받을 수도 있어요'
+              content="입금받을 계좌를 알려주세요"
+              description="전화번호(토스, 카카오)로 받을 수도 있어요"
             />
             <RadioGroup
               value={depositType}
-              name='depositType'
+              name="depositType"
               onChange={setDepositType}
-              className='flex flex-col gap-4'
+              className="flex flex-col gap-4"
             >
               <Radio
-                value='phone'
-                className='flex cursor-pointer select-none items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 p-4 text-lg font-semibold text-gray-700 focus:outline-none ui-checked:border-primary-s3 ui-checked:bg-primary-s5/10 ui-checked:text-primary-s5'
+                value="phone"
+                className="flex cursor-pointer select-none items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 p-4 text-lg font-semibold text-gray-700 focus:outline-none ui-checked:border-primary-s3 ui-checked:bg-primary-s5/10 ui-checked:text-primary-s5"
               >
                 {depositType === 'phone' && (
-                  <CheckCircleIcon className='size-6 text-gray-400 ui-checked:text-primary-s5' />
+                  <CheckCircleIcon className="size-6 text-gray-400 ui-checked:text-primary-s5" />
                 )}
                 전화번호로 받을래요
               </Radio>
               <Radio
-                value='account'
-                className='flex cursor-pointer select-none items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 p-4 text-lg font-semibold text-gray-700 focus:outline-none ui-checked:border-primary-s3 ui-checked:bg-primary-s5/10 ui-checked:text-primary-s5'
+                value="account"
+                className="flex cursor-pointer select-none items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 p-4 text-lg font-semibold text-gray-700 focus:outline-none ui-checked:border-primary-s3 ui-checked:bg-primary-s5/10 ui-checked:text-primary-s5"
               >
                 {depositType === 'account' && (
-                  <CheckCircleIcon className='size-6 text-gray-400 ui-checked:text-primary-s5' />
+                  <CheckCircleIcon className="size-6 text-gray-400 ui-checked:text-primary-s5" />
                 )}
                 계좌로 받을래요
               </Radio>
             </RadioGroup>
             <Fieldset
-              as='fieldset'
+              as="fieldset"
               disabled={depositType === 'phone'}
-              className='mt-9 flex flex-col gap-6 aria-disabled:hidden'
+              className="mt-9 flex flex-col gap-6 aria-disabled:hidden"
             >
-              <Field className='flex flex-col gap-2'>
-                <Label className='text-sm text-gray-500'>계좌번호</Label>
+              <Field className="flex flex-col gap-2">
+                <Label className="text-sm text-gray-500">계좌번호</Label>
                 <Input
-                  type='tel'
+                  type="tel"
                   minLength={7}
                   required={depositType === 'account'}
                   {...register('no', {
@@ -123,26 +123,26 @@ export function AccountStep ({
                     minLength: 7
                   })}
                   defaultValue={defaultValues.no ?? ''}
-                  placeholder='계좌번호 입력'
-                  className='rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none
+                  placeholder="계좌번호 입력"
+                  className="rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none
                   focus:border-primary-s3 focus:bg-primary-s4/10
-                  disabled:opacity-50 disabled:brightness-90'
+                  disabled:opacity-50 disabled:brightness-90"
                 />
               </Field>
-              <Field className='flex flex-col gap-2'>
-                <Label className='text-sm text-gray-500'>은행</Label>
-                <div className='relative'>
+              <Field className="flex flex-col gap-2">
+                <Label className="text-sm text-gray-500">은행</Label>
+                <div className="relative">
                   <Select
                     required={depositType === 'account'}
                     {...register('bank', {
                       required: depositType === 'account'
                     })}
                     defaultValue={defaultValues.bank ?? ''}
-                    className='block w-full appearance-none rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none
+                    className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-100 p-3 outline-none
                     focus:border-primary-s3 focus:bg-primary-s4/10
-                    disabled:opacity-50 disabled:brightness-90'
+                    disabled:opacity-50 disabled:brightness-90"
                   >
-                    <option disabled value=''>
+                    <option disabled value="">
                       은행 선택
                     </option>
                     {banks.map((bank) => (
@@ -152,7 +152,8 @@ export function AccountStep ({
                     ))}
                   </Select>
                   <ChevronDownIcon
-                    className='pointer-events-none absolute right-3 top-1/2 -mt-2 size-4 text-gray-500' />
+                    className="pointer-events-none absolute right-3 top-1/2 -mt-2 size-4 text-gray-500"
+                  />
                 </div>
               </Field>
             </Fieldset>
@@ -160,15 +161,15 @@ export function AccountStep ({
         </main>
       }
       bottomBar={
-        <section id='cta' className='aria-disabled:hidden'>
+        <section id="cta" className="aria-disabled:hidden">
           <Button
             aria-busy={isSubmitting}
             disabled={!(isValid || depositType === 'phone') || isSubmitting}
-            type='submit'
-            form='form'
-            className='btn-cta clickarea'
+            type="submit"
+            form="form"
+            className="btn-cta clickarea"
           >
-            {isSubmitting ? <Spinner stroke='#fff7' /> : '다음'}
+            {isSubmitting ? <Spinner stroke="#fff7" /> : '다음'}
           </Button>
         </section>
       }

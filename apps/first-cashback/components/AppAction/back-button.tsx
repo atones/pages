@@ -33,7 +33,7 @@ export function BackButton ({ href, mode = 'back' }: BackButtonProps) {
             : () => router.replace(href!)
 
   return (
-    <a href={href} onClick={action} className='block w-full text-gray-800'>
+    <a href={href} onClick={action} className="block w-full text-gray-800">
       <ArrowLeftIcon width={24} height={24} />
     </a>
   )

@@ -4,6 +4,7 @@
   "extends": "./base.json",
   "compilerOptions": {
     "strict": true,
+    "declaration": false,
     "plugins": [
       {
         "name": "next"

@@ -40,7 +40,7 @@ const config: Config = {
     },
     screens: {
       tablet: '640px',
-      desktop: '1060px'
+      desktop: '1140px'
     },
     colors: {
       ...colors,

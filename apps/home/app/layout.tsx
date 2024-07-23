@@ -2,22 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
 import { ThemeModeScript } from 'flowbite-react'
-import type { CustomFlowbiteTheme } from 'flowbite-react'
-import { Flowbite } from 'flowbite-react'
-
-const customTheme: CustomFlowbiteTheme = {
-  navbar: {
-    link: {
-      active: { on: 'text-gray-900' }
-    }
-  },
-
-  button: {
-    color: {
-      primary: 'bg-red-500 hover:bg-red-600'
-    }
-  }
-}
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
   title: '캔디페이',
@@ -54,7 +40,13 @@ export default function RootLayout ({
       />
       <ThemeModeScript mode="light" />
     </head>
-    <body className={`${tossFace.variable} font-sans`}>{children}</body>
+    <body className={`${tossFace.variable} font-sans`}>
+    <Navbar />
+    <main style={{ minHeight: '100vh' }} className="flex w-full flex-col items-center bg-white">
+      {children}
+    </main>
+    <Footer />
+    </body>
     </html>
   )
 }

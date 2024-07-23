@@ -8,14 +8,11 @@
         text-size-adjust: none;
         -webkit-text-size-adjust: none;
         -webkit-tap-highlight-color: transparent;
+        @apply accent-primary-s5 lining-nums m-auto;
     }
 
     html {
         @apply bg-gray-100 text-gray-900;
-    }
-
-    body {
-        @apply flex flex-col items-center bg-white text-gray-900 accent-primary-s5 lining-nums m-auto;
     }
 }
 

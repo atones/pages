@@ -1,5 +1,6 @@
 import { Navbar, NavbarBrand, NavbarLink } from 'flowbite-react'
 import Link from 'next/link'
+import LocaleSelector from '@/components/locale'
 
 const CandyNavbar = () => (
   <header className="sticky top-0 z-50 flex w-full flex-col items-center border-b border-gray-200 bg-white">
@@ -25,11 +26,7 @@ const CandyNavbar = () => (
         <ul className="flex w-fit items-center gap-4">
           <NavbarLink href="/merchant">가맹문의</NavbarLink>
           <NavbarLink href="/faq">자주 묻는 질문</NavbarLink>
-          <div className="flex gap-4 pl-12">
-            <li><Link aria-selected href="#" className="text-gray-400 aria-selected:text-gray-800">KOR</Link></li>
-            <span className="text-gray-400">|</span>
-            <li><Link href="#" className="text-gray-400 aria-selected:text-gray-800">ENG</Link></li>
-          </div>
+          <LocaleSelector />
         </ul>
       </div>
     </Navbar>

@@ -1,6 +1,6 @@
 import { createI18nServer } from 'next-international/server'
 
-export const { getStaticParams } = createI18nServer({
-  en: () => import('./ko'),
-  fr: () => import('./en')
+export const { getI18n, getScopedI18n, getCurrentLocale, getStaticParams } = createI18nServer({
+  ko: () => import('./ko'),
+  en: () => import('./en')
 })

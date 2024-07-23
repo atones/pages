@@ -11,7 +11,9 @@ import {
 import { convertNewlineToJSX } from '@toss/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { H1 } from '@/components/typography'
-import { objectKeys, objectEntries } from '@toss/utils'
+import { objectEntries, objectKeys } from '@toss/utils'
+import { getStaticParams } from '@/locales/server'
+import { setStaticParamsLocale } from 'next-international/server'
 
 const faqItems = {
   결제: [
@@ -40,7 +42,13 @@ const faqItems = {
   기타: []
 }
 
-export default function FaqPage () {
+export function generateStaticParams () {
+  return getStaticParams()
+}
+
+export default async function FaqPage ({ params: { locale } }: { params: { locale: string } }) {
+  setStaticParamsLocale(locale)
+
   return (
     <div className="flex w-full max-w-screen-desktop flex-col pt-24">
       <div className="mx-8">

@@ -1,12 +1,22 @@
 import Image from 'next/image'
 import { convertNewlineToJSX } from '@toss/react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { setStaticParamsLocale } from 'next-international/server'
+import { getScopedI18n, getStaticParams } from '@/locales/server'
 
-export default function MyPage () {
+export function generateStaticParams () {
+  return getStaticParams()
+}
+
+export default async function MyPage ({ params: { locale } }: { params: { locale: string } }) {
+  setStaticParamsLocale(locale)
+
+  const t = await getScopedI18n('home')
+
   return (
     <>
       <section style={{ height: '95vh' }} className="flex flex-col items-center">
-        <H1 text="잠든 카드를\n깨울 시간" />
+        <H1 text={t('title')} />
         <div className="pb-7 pt-5 text-xl font-medium text-gray-400">
           캔디페이와 함께하는 똑똑한 결제의 시작
         </div>

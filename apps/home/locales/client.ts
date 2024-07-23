@@ -1,7 +1,7 @@
 'use client'
 import { createI18nClient } from 'next-international/client'
 
-export const { I18nProviderClient } = createI18nClient({
-  en: () => import('./ko'),
-  fr: () => import('./en')
+export const { useI18n, useScopedI18n, useChangeLocale, useCurrentLocale, I18nProviderClient } = createI18nClient({
+  ko: () => import('./ko'),
+  en: () => import('./en')
 })

@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
 import { ThemeModeScript } from 'flowbite-react'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
   title: '캔디페이',

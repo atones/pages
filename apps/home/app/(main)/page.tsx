@@ -148,4 +148,3 @@ const ShowcaseDark = ({
     </div>
   </section>
 )
-

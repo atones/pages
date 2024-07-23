@@ -33,9 +33,9 @@ const CandyFooter = () => (
         고객센터: 070-8098-9387 | Email: help@candypay.co.kr<br />
       </address>
       <FooterLinkGroup theme={groupLink} className="py-6">
-        <FooterLink theme={groupLink.link} href="#">개인정보처리방침</FooterLink>
-        <FooterLink theme={groupLink.link} href="#">서비스 이용약관</FooterLink>
-        <FooterLink theme={groupLink.link} href="#">Contact Us</FooterLink>
+        <FooterLink theme={groupLink.link} href="/terms/privacy">개인정보처리방침</FooterLink>
+        <FooterLink theme={groupLink.link} href="/terms/service">서비스 이용약관</FooterLink>
+        <FooterLink theme={groupLink.link} href="mailto:help@atones.co.kr">Contact Us</FooterLink>
       </FooterLinkGroup>
     </div>
   </Footer>

@@ -41,11 +41,7 @@ export default function RootLayout ({
       <ThemeModeScript mode="light" />
     </head>
     <body className={`${tossFace.variable} font-sans`}>
-    <Navbar />
-    <main style={{ minHeight: '100vh' }} className="flex w-full flex-col items-center bg-white">
-      {children}
-    </main>
-    <Footer />
+    {children}
     </body>
     </html>
   )

@@ -1,17 +1,47 @@
 import type { Config } from 'tailwindcss'
-import twColors from 'tailwindcss/colors'
+import {
+  inherit,
+  current,
+  transparent,
+  black,
+  white,
+  gray,
+  red,
+  green,
+  teal,
+  cyan,
+  sky,
+  blue,
+  violet,
+  purple,
+  fuchsia,
+  pink,
+  rose
+} from 'tailwindcss/colors'
 import flowbite from 'flowbite-react/tailwind'
+import typography from '@tailwindcss/typography'
 
-const {
-  lightBlue,
-  warmGray,
-  trueGray,
-  coolGray,
-  blueGray,
-  ...colors
-} = twColors
+const colors = {
+  inherit,
+  current,
+  transparent,
+  black,
+  white,
+  gray,
+  red,
+  green,
+  teal,
+  cyan,
+  sky,
+  blue,
+  violet,
+  purple,
+  fuchsia,
+  pink,
+  rose
+}
 
-const orange = {
+const primary = {
   s5: '#ff7720',
   s4: '#ff8d4e',
   s3: '#ffcbae',
@@ -26,6 +56,7 @@ const config: Config = {
     flowbite.content()
   ],
   plugins: [
+    typography,
     flowbite.plugin()
   ],
   theme: {
@@ -44,7 +75,7 @@ const config: Config = {
     },
     colors: {
       ...colors,
-      primary: orange
+      primary
     }
   }
 }

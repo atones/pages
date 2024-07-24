@@ -143,10 +143,7 @@ const Sponsors = () => (
   </section>
 )
 
-const ShowcaseGray = ({
-  title,
-  desc = '없은 구들장도 나를 생일이나 잡습니다. 말한 알며 우리의 나이게 권하여 특히 모두에 알아요. 와중까지 때문 그만 등 나가 있으면 던지는 찾다.'
-}: { title: string, desc?: string }) => (
+const ShowcaseGray = ({ title, desc }: { title: string, desc: string }) => (
   <article className="grid grid-cols-[1fr_auto] gap-24">
     <div>
       <h2
@@ -170,7 +167,7 @@ const ShowcaseGray = ({
   </article>
 )
 
-const ShowcasePrimary = ({ title, desc }: { title: string, desc?: string }) => (
+const ShowcasePrimary = ({ title, desc }: { title: string, desc: string }) => (
   <section className="grid grid-cols-[1fr_auto] gap-24">
     <div>
       <h2

@@ -11,7 +11,7 @@ const home = {
   appeal: {
     'legacy-pay': {
       title: 'Why do we charge cash at ○○ Pay?',
-      content: 'To make __interest income__. If you use a credit card, They can\'t make money because you has the money.'
+      content: 'To make interest income. If you use a credit card, They can\'t make money because you has the money.'
     },
     'credit-card': {
       title: 'It\'s profitable to use a credit card',

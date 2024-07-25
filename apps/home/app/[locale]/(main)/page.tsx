@@ -3,6 +3,7 @@ import { convertNewlineToJSX } from '@toss/react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { setStaticParamsLocale } from 'next-international/server'
 import { getScopedI18n, getStaticParams } from '@/locales/server'
+import Link from 'next/link'
 
 const toJSX = convertNewlineToJSX
 
@@ -23,11 +24,12 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         <div className="pb-7 pt-5 font-medium text-gray-400 desktop:text-xl">
           {t('subtitle')}
         </div>
-        <button
+        <Link
+          href="/download"
           className="rounded-lg bg-primary-s5 px-6 py-3 font-bold text-white outline outline-0 outline-primary-s3 hover:outline-4"
         >
           {t('download')}
-        </button>
+        </Link>
         <Image unoptimized src="/cards.png" alt="cards" width={720} height={720} />
       </section>
       <section

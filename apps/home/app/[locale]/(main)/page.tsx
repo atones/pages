@@ -31,9 +31,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         <Image unoptimized src="/cards.png" alt="cards" width={720} height={720} />
       </section>
       <section className="flex w-full flex-col items-center gap-8 py-12">
-        {/*<div*/}
-        {/*  className="flex w-full max-w-screen-desktop items-stretch justify-between rounded-3xl bg-gray-100 p-12 text-gray-700"*/}
-        {/*>*/}
+        {/*<div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-12 text-gray-700">*/}
         {/*  <h2 className="mb-12 text-3xl font-semibold">*/}
         {/*    {toJSX(t('appeal.legacy-pay.title'))}*/}
         {/*  </h2>*/}
@@ -41,9 +39,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         {/*    {toJSX(t('appeal.legacy-pay.content'))}*/}
         {/*  </p>*/}
         {/*</div>*/}
-        <div
-          className="flex w-full max-w-screen-desktop items-stretch justify-between rounded-3xl bg-gray-100 p-12 text-gray-700"
-        >
+        <div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-12 text-gray-700">
           <h2 className="mb-12 text-3xl font-semibold">
             {toJSX(t('appeal.credit-card.title'))}
           </h2>
@@ -51,9 +47,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
             {toJSX(t('appeal.credit-card.content'))}
           </p>
         </div>
-        <div
-          className="flex w-full max-w-screen-desktop items-stretch justify-between rounded-3xl bg-primary-s5 p-12 text-white"
-        >
+        <div className="w-full max-w-screen-desktop rounded-3xl bg-primary-s5 p-12 text-white">
           <h2 className="mb-12 text-3xl font-semibold">
             {toJSX(t('appeal.candypay.title'))}
           </h2>

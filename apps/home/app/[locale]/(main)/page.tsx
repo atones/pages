@@ -55,7 +55,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         className="flex w-full max-w-screen-desktop flex-col items-center gap-5 px-6 py-9
         desktop:gap-8 desktop:px-8 desktop:py-12"
       >
-        <TabGroup id="about" className="py-40">
+        <TabGroup id="about" className="w-full py-40">
           <TabList className="mb-8 grid w-fit grid-cols-2 gap-4 rounded-md text-sm desktop:mb-20 desktop:text-lg">
             {[w('customer'), w('merchant')].map((text) =>
               <Tab
@@ -84,10 +84,11 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
       </section>
       <section
         id="merchant"
-        className="flex w-full max-w-screen-desktop flex-col items-center gap-5 bg-primary-s5 px-6 py-9
-        desktop:gap-8 desktop:px-8 desktop:py-12"
+        className="flex w-full flex-col items-center gap-5 bg-primary-s5 "
       >
-        <div className="w-full max-w-screen-desktop">
+        <div
+          className="w-full max-w-screen-desktop px-6 py-9 desktop:gap-8 desktop:px-8 desktop:py-12"
+        >
           <ShowcasePrimary
             title={t('func.pos.title')}
             desc={t('func.pos.desc')}
@@ -120,7 +121,7 @@ const Sponsors = () => (
 )
 
 const ShowcaseGray = ({ title, desc }: { title: string, desc: string }) => (
-  <article className="grid grid-cols-1 grid-rows-[1fr_auto] desktop:grid-cols-[1fr_auto]">
+  <article className="grid grid-cols-1 grid-rows-[1fr_auto] desktop:grid-cols-[1fr_auto] desktop:gap-12">
     <div className="mb-6 desktop:m-0">
       <h2
         className="mb-6 text-left text-2xl font-semibold desktop:text-4xl"
@@ -135,7 +136,7 @@ const ShowcaseGray = ({ title, desc }: { title: string, desc: string }) => (
       </span>
     </div>
     <figure
-      className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-gray-200 desktop:w-[500px]"
+      className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-gray-200 desktop:w-[420px]"
     >
       1:1
     </figure>
@@ -143,7 +144,7 @@ const ShowcaseGray = ({ title, desc }: { title: string, desc: string }) => (
 )
 
 const ShowcasePrimary = ({ title, desc }: { title: string, desc: string }) => (
-  <section className="grid grid-cols-1 grid-rows-[1fr_auto] text-white desktop:grid-cols-[1fr_auto]">
+  <section className="grid grid-cols-1 grid-rows-[1fr_auto] text-white desktop:grid-cols-[1fr_auto] desktop:gap-12">
     <div className="mb-6 desktop:m-0">
       <h2
         className="mb-6 text-left text-2xl font-semibold desktop:text-4xl"
@@ -158,7 +159,7 @@ const ShowcasePrimary = ({ title, desc }: { title: string, desc: string }) => (
       </p>
     </div>
     <figure
-      className="flex aspect-square flex-col items-center justify-center rounded-3xl border border-white desktop:w-[500px]"
+      className="flex aspect-square flex-col items-center justify-center rounded-3xl border border-white desktop:w-[420px]"
     >
       1:1 폰을 쥔 손 또는 행복한 자영업자
     </figure>

@@ -29,7 +29,7 @@ const config: Config = {
     },
     extend: {
       colors: { primary },
-      screens: { tablet: '640px', desktop: '1140px' }
+      screens: { tablet: '640px', desktop: '1040px' }
     }
   }
 }

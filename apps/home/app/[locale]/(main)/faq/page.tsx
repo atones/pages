@@ -94,8 +94,8 @@ export default async function FaqPage ({ params: { locale } }: { params: { local
   setStaticParamsLocale(locale)
 
   return (
-    <div className="flex w-full max-w-screen-desktop flex-col pt-24">
-      <div className="mx-8">
+    <div className="flex w-full max-w-screen-desktop flex-col pt-16">
+      <div className="m-8">
         <H1 text="자주 묻는 질문" />
         <TabGroup>
           <TabList className="mb-20 grid w-fit grid-cols-4 gap-4 rounded-md text-lg">

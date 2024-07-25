@@ -32,7 +32,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
       </section>
       <section className="flex w-full flex-col items-center gap-8 py-12">
         {/*<div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-12 text-gray-700">*/}
-        {/*  <h2 className="mb-12 text-3xl font-semibold">*/}
+        {/*  <h2 className="mb-8 text-3xl font-semibold">*/}
         {/*    {toJSX(t('appeal.legacy-pay.title'))}*/}
         {/*  </h2>*/}
         {/*  <p style={{ lineHeight: 1.4 }} className="text-2xl">*/}
@@ -40,7 +40,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         {/*  </p>*/}
         {/*</div>*/}
         <div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-12 text-gray-700">
-          <h2 className="mb-12 text-3xl font-semibold">
+          <h2 className="mb-6 text-3xl font-semibold">
             {toJSX(t('appeal.credit-card.title'))}
           </h2>
           <p style={{ lineHeight: 1.4 }} className="text-2xl">
@@ -48,7 +48,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
           </p>
         </div>
         <div className="w-full max-w-screen-desktop rounded-3xl bg-primary-s5 p-12 text-white">
-          <h2 className="mb-12 text-3xl font-semibold">
+          <h2 className="mb-6 text-3xl font-semibold">
             {toJSX(t('appeal.candypay.title'))}
           </h2>
           <p style={{ lineHeight: 1.4 }} className="text-2xl">

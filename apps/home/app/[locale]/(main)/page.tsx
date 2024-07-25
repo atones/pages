@@ -30,7 +30,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         </button>
         <Image unoptimized src="/cards.png" alt="cards" width={720} height={720} />
       </section>
-      <section className="flex w-full flex-col items-center gap-8 py-12">
+      <section className="flex w-full max-w-screen-desktop flex-col items-center gap-8 px-8 py-12">
         {/*<div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-12 text-gray-700">*/}
         {/*  <h2 className="mb-8 text-3xl font-semibold">*/}
         {/*    {toJSX(t('appeal.legacy-pay.title'))}*/}
@@ -56,7 +56,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
           </p>
         </div>
       </section>
-      <section className="w-full max-w-screen-desktop">
+      <section className="w-full max-w-screen-desktop px-8">
         <TabGroup id="about" className="py-40">
           <TabList className="mb-20 grid w-fit grid-cols-2 gap-4 rounded-md text-lg">
             {[w('customer'), w('merchant')].map((text) =>
@@ -83,7 +83,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
           </TabPanels>
         </TabGroup>
       </section>
-      <section id="merchant" className="flex w-full flex-col items-center bg-primary-s5 px-12 py-20">
+      <section id="merchant" className="flex w-full flex-col items-center bg-primary-s5 px-8 py-20">
         <div className="w-full max-w-screen-desktop">
           <ShowcasePrimary
             title={t('func.pos.title')}

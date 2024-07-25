@@ -1,45 +1,5 @@
 import type { Config } from 'tailwindcss'
-import {
-  inherit,
-  current,
-  transparent,
-  black,
-  white,
-  gray,
-  red,
-  green,
-  teal,
-  cyan,
-  sky,
-  blue,
-  violet,
-  purple,
-  fuchsia,
-  pink,
-  rose
-} from 'tailwindcss/colors'
-import flowbite from 'flowbite-react/tailwind'
 import typography from '@tailwindcss/typography'
-
-const colors = {
-  inherit,
-  current,
-  transparent,
-  black,
-  white,
-  gray,
-  red,
-  green,
-  teal,
-  cyan,
-  sky,
-  blue,
-  violet,
-  purple,
-  fuchsia,
-  pink,
-  rose
-}
 
 const primary = {
   s5: '#ff7720',
@@ -52,12 +12,10 @@ const primary = {
 const config: Config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    flowbite.content()
+    './components/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   plugins: [
-    typography,
-    flowbite.plugin()
+    typography
   ],
   theme: {
     fontFamily: {
@@ -69,13 +27,9 @@ const config: Config = {
         'sans-serif'
       ]
     },
-    screens: {
-      tablet: '640px',
-      desktop: '1140px'
-    },
-    colors: {
-      ...colors,
-      primary
+    extend: {
+      colors: { primary },
+      screens: { tablet: '640px', desktop: '1140px' }
     }
   }
 }

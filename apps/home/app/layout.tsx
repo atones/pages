@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
-import { ThemeModeScript } from 'flowbite-react'
 
 export const metadata: Metadata = {
   title: '캔디페이',
@@ -36,7 +35,6 @@ export default function RootLayout ({
         crossOrigin="anonymous"
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.min.css"
       />
-      <ThemeModeScript mode="light" />
     </head>
     <body className={`${tossFace.variable} font-sans`}>
     {children}

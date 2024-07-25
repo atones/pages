@@ -3,7 +3,7 @@ import { useChangeLocale, useCurrentLocale } from '@/locales/client'
 
 export default function LocaleSelector () {
   return (
-    <div className="flex gap-4 pl-12">
+    <div className="flex gap-4">
       <LocaleButton locale="ko" />
       <span className="text-gray-400">|</span>
       <LocaleButton locale="en" />

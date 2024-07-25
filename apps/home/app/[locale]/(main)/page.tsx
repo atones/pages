@@ -20,7 +20,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
     <>
       <section style={{ height: '95vh' }} className="flex flex-col items-center">
         <H1 text={t('title')} />
-        <div className="pb-7 pt-5 text-xl font-medium text-gray-400">
+        <div className="pb-7 pt-5 font-medium text-gray-400 desktop:text-xl">
           {t('subtitle')}
         </div>
         <button
@@ -30,39 +30,38 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         </button>
         <Image unoptimized src="/cards.png" alt="cards" width={720} height={720} />
       </section>
-      <section className="flex w-full max-w-screen-desktop flex-col items-center gap-8 px-8 py-12">
-        {/*<div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-12 text-gray-700">*/}
-        {/*  <h2 className="mb-8 text-3xl font-semibold">*/}
-        {/*    {toJSX(t('appeal.legacy-pay.title'))}*/}
-        {/*  </h2>*/}
-        {/*  <p style={{ lineHeight: 1.4 }} className="text-2xl">*/}
-        {/*    {toJSX(t('appeal.legacy-pay.content'))}*/}
-        {/*  </p>*/}
-        {/*</div>*/}
-        <div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-12 text-gray-700">
-          <h2 className="mb-6 text-3xl font-semibold">
+      <section
+        className="hidden w-full max-w-screen-desktop flex-col items-center gap-5 px-6 py-9 desktop:block
+        desktop:gap-8 desktop:px-8 desktop:py-12"
+      >
+        <div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-6 text-gray-700 desktop:p-12">
+          <h2 className="mb-3 text-xl font-semibold desktop:mb-6 desktop:text-3xl">
             {toJSX(t('appeal.credit-card.title'))}
           </h2>
-          <p style={{ lineHeight: 1.4 }} className="text-2xl">
+          <p style={{ lineHeight: 1.4 }} className="text-sm desktop:text-2xl">
             {toJSX(t('appeal.credit-card.content'))}
           </p>
         </div>
-        <div className="w-full max-w-screen-desktop rounded-3xl bg-primary-s5 p-12 text-white">
-          <h2 className="mb-6 text-3xl font-semibold">
+        <div className="w-full max-w-screen-desktop rounded-3xl bg-primary-s5 p-6 text-white desktop:p-12">
+          <h2 className="mb-3 text-xl font-semibold desktop:mb-6 desktop:text-3xl">
             {toJSX(t('appeal.candypay.title'))}
           </h2>
-          <p style={{ lineHeight: 1.4 }} className="text-2xl">
+          <p style={{ lineHeight: 1.4 }} className="text-sm desktop:text-2xl">
             {toJSX(t('appeal.candypay.content'))}
           </p>
         </div>
       </section>
-      <section className="w-full max-w-screen-desktop px-8">
+      <section
+        className="flex w-full max-w-screen-desktop flex-col items-center gap-5 px-6 py-9
+        desktop:gap-8 desktop:px-8 desktop:py-12"
+      >
         <TabGroup id="about" className="py-40">
-          <TabList className="mb-20 grid w-fit grid-cols-2 gap-4 rounded-md text-lg">
+          <TabList className="mb-8 grid w-fit grid-cols-2 gap-4 rounded-md text-sm desktop:mb-20 desktop:text-lg">
             {[w('customer'), w('merchant')].map((text) =>
               <Tab
                 key={text}
-                className="inline-flex items-center justify-center rounded-md bg-gray-100 px-5 py-2.5 font-semibold text-gray-900 ring-primary-s3
+                style={{ paddingInline: '1em', paddingBlock: '0.5em' }}
+                className="inline-flex items-center justify-center rounded-md bg-gray-100 font-semibold text-gray-900 ring-primary-s3
                          focus:outline-none data-[selected]:bg-primary-s5 data-[selected]:text-white data-[selected]:ring-4"
               >
                 {text}
@@ -83,7 +82,11 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
           </TabPanels>
         </TabGroup>
       </section>
-      <section id="merchant" className="flex w-full flex-col items-center bg-primary-s5 px-8 py-20">
+      <section
+        id="merchant"
+        className="flex w-full max-w-screen-desktop flex-col items-center gap-5 bg-primary-s5 px-6 py-9
+        desktop:gap-8 desktop:px-8 desktop:py-12"
+      >
         <div className="w-full max-w-screen-desktop">
           <ShowcasePrimary
             title={t('func.pos.title')}
@@ -106,8 +109,8 @@ const H1 = ({ text }: { text: string }) => (
 )
 
 const Sponsors = () => (
-  <section id="sponsors" className="flex w-full flex-col items-center p-12">
-    <div className="flex items-center justify-between gap-12 ">
+  <section id="sponsors" className="flex w-full flex-col items-center p-6 desktop:px-8">
+    <div className="grid grid-cols-2 grid-rows-2 items-center justify-between desktop:flex">
       <Image src="/중소벤처기업부.svg" alt="중소벤처기업부" unoptimized width={240} height={240} />
       <Image src="/구글창구.webp" alt="구글창구" unoptimized width={240} height={240} />
       <Image src="/서울대기술지주.jpg" alt="서울대기술지주" unoptimized width={240} height={240} />
@@ -117,50 +120,47 @@ const Sponsors = () => (
 )
 
 const ShowcaseGray = ({ title, desc }: { title: string, desc: string }) => (
-  <article className="grid grid-cols-[1fr_auto] gap-24">
-    <div>
+  <article className="grid grid-cols-1 grid-rows-[1fr_auto] desktop:grid-cols-[1fr_auto]">
+    <div className="mb-6 desktop:m-0">
       <h2
-        style={{ lineHeight: 1.2 }}
-        className="mb-6 text-left text-4xl font-semibold text-gray-800"
+        className="mb-6 text-left text-2xl font-semibold desktop:text-4xl"
       >
         {convertNewlineToJSX(title)}
       </h2>
       <span
         style={{ lineHeight: 1.5 }}
-        className="text-2xl text-gray-700"
+        className="desktop:text-2xl"
       >
         {convertNewlineToJSX(desc)}
       </span>
     </div>
-    <div
-      className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-gray-200" style={{ width: 500 }}
+    <figure
+      className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-gray-200 desktop:w-[500px]"
     >
-      500x500
-    </div>
+      1:1
+    </figure>
   </article>
 )
 
 const ShowcasePrimary = ({ title, desc }: { title: string, desc: string }) => (
-  <section className="grid grid-cols-[1fr_auto] gap-24">
-    <div>
+  <section className="grid grid-cols-1 grid-rows-[1fr_auto] text-white desktop:grid-cols-[1fr_auto]">
+    <div className="mb-6 desktop:m-0">
       <h2
-        style={{ lineHeight: 1.2 }}
-        className="mb-6 text-left text-4xl font-semibold text-white"
+        className="mb-6 text-left text-2xl font-semibold desktop:text-4xl"
       >
         {convertNewlineToJSX(title)}
       </h2>
       <p
         style={{ lineHeight: 1.5 }}
-        className="text-2xl text-white"
+        className="desktop:text-2xl"
       >
         {convertNewlineToJSX(desc)}
       </p>
     </div>
-    <div
-      className="flex aspect-square flex-col items-center justify-center rounded-3xl border border-white text-white"
-      style={{ width: 500 }}
+    <figure
+      className="flex aspect-square flex-col items-center justify-center rounded-3xl border border-white desktop:w-[500px]"
     >
       1:1 폰을 쥔 손 또는 행복한 자영업자
-    </div>
+    </figure>
   </section>
 )

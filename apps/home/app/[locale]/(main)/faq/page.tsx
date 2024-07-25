@@ -94,14 +94,15 @@ export default async function FaqPage ({ params: { locale } }: { params: { local
   setStaticParamsLocale(locale)
 
   return (
-    <div className="my-24 flex w-full max-w-screen-desktop flex-col px-8">
+    <div className="my-24 flex w-full max-w-screen-desktop flex-col px-6 desktop:px-8">
       <H1 text="자주 묻는 질문" />
       <TabGroup>
-        <TabList className="mb-20 grid w-fit grid-cols-4 gap-4 rounded-md text-lg">
+        <TabList className="mb-20 grid w-fit grid-cols-2 gap-4 rounded-md desktop:grid-cols-4 desktop:text-lg">
           {objectKeys(faqItems).map((text) =>
             <Tab
               key={text}
-              className="inline-flex items-center justify-center rounded-md bg-gray-100 px-5 py-2.5 font-semibold text-gray-900 ring-primary-s3
+              style={{ paddingInline: '1em', paddingBlock: '0.5em' }}
+              className="inline-flex items-center justify-center rounded-md bg-gray-100 font-semibold text-gray-900 ring-primary-s3
                          focus:outline-none data-[selected]:bg-primary-s5 data-[selected]:text-white data-[selected]:ring-4"
             >
               {text}
@@ -110,7 +111,7 @@ export default async function FaqPage ({ params: { locale } }: { params: { local
         </TabList>
         <TabPanels className="w-full">
           {objectEntries(faqItems).map(([category, items]) => (
-            <TabPanel key={category} className="flex w-full flex-col gap-6">
+            <TabPanel key={category} className="flex w-full flex-col gap-4 desktop:gap-6">
               {items.map((item, idx) => <FaqItem key={idx} {...item} />)}
             </TabPanel>
           ))}
@@ -122,22 +123,24 @@ export default async function FaqPage ({ params: { locale } }: { params: { local
 
 const FaqItem = ({ question, answer }: { question: string, answer: string }) => (
   <Disclosure
-    as="div" className="w-full rounded-2xl border border-gray-200
-  data-[open]:border-primary-s3"
+    as="div"
+    className="w-full rounded-xl border-none border-gray-200 data-[open]:border-primary-s3 desktop:border desktop:text-xl"
   >
     <DisclosureButton
-      className="group flex w-full items-center justify-between p-4 text-xl text-gray-600 data-[open]:bg-primary-s1/50 data-[open]:text-primary-s5"
+      className="group flex w-full items-center justify-between rounded-xl p-1 text-left text-gray-600
+      data-[open]:bg-primary-s1/50 data-[open]:text-primary-s5
+      desktop:rounded-none desktop:p-4 desktop:text-xl"
     >
-      <p>
-        <span className="mr-6 font-bold text-gray-500 group-data-[open]:text-inherit">Q</span>
+      <p className="grid grid-cols-[auto_1fr] gap-3 desktop:gap-6">
+        <span className="font-bold text-gray-500 group-data-[open]:text-inherit">Q</span>
         <span className="font-medium">{convertNewlineToJSX(question)}</span>
       </p>
       <ChevronDownIcon
-        className="size-5 group-data-[open]:rotate-180"
+        className="hidden size-5 group-data-[open]:rotate-180 desktop:block"
       />
     </DisclosureButton>
-    <DisclosurePanel className="grid grid-cols-[auto_1fr] p-4 text-xl text-gray-600">
-      <span className="mr-6 font-bold text-gray-500">A</span>
+    <DisclosurePanel className="grid grid-cols-[auto_1fr] gap-3 p-1 text-gray-600 desktop:gap-6 desktop:p-4">
+      <span className="font-bold text-gray-500">A</span>
       {convertNewlineToJSX(answer)}
     </DisclosurePanel>
   </Disclosure>

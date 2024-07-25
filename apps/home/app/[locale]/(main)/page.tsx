@@ -31,8 +31,8 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         <Image unoptimized src="/cards.png" alt="cards" width={720} height={720} />
       </section>
       <section
-        className="hidden w-full max-w-screen-desktop flex-col items-center gap-5 px-6 py-9 desktop:block
-        desktop:gap-8 desktop:px-8 desktop:py-12"
+        className="hidden w-full max-w-screen-desktop flex-col items-center gap-5 px-6 py-9
+        desktop:flex desktop:gap-8 desktop:px-8 desktop:py-12"
       >
         <div className="w-full max-w-screen-desktop rounded-3xl bg-gray-100 p-6 text-gray-700 desktop:p-12">
           <h2 className="mb-3 text-xl font-semibold desktop:mb-6 desktop:text-3xl">

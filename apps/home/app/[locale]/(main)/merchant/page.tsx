@@ -1,0 +1,44 @@
+import { H1 } from '@/components/typography'
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import type { UrlObject } from 'node:url'
+
+export default function MerchantPage () {
+  return (
+    <div className="my-24 flex w-full max-w-screen-desktop flex-col px-6 desktop:px-8">
+      <H1 text="가맹 문의" />
+      <div className="flex flex-col gap-4">
+        <BigButtonPrimary href="/download" desc="개인사업자/프리랜서" title="앱 다운로드" />
+        <BigButtonGray href="https://forms.app" desc="대기업/프랜차이즈" title="제휴 문의" />
+      </div>
+      <hr className="my-32" />
+      <H1 text="부가기능" />
+      <div id="copy-cert">
+        <BigButtonGray href="https://candy-cert-copy.vercel.app" desc="공동인증서로 가입하려면" title="공동인증서 복사" />
+      </div>
+    </div>
+  )
+}
+
+const BigButtonGray = ({ desc, title, href }: { desc?: string; title: string; href: UrlObject | string }) => (
+  <Link href={href} className="flex w-full items-center justify-between rounded-lg bg-gray-100 p-6 text-lg">
+    <div className="text-left">
+      <p className="font-medium">{desc}</p>
+      <h2 className="text-2xl font-semibold">{title}</h2>
+    </div>
+    <ChevronRightIcon className="size-6" />
+  </Link>
+)
+
+const BigButtonPrimary = ({ desc, title, href }: { desc?: string; title: string; href: UrlObject | string }) => (
+  <Link
+    href={href}
+    className="flex w-full items-center justify-between rounded-lg bg-primary-s5 p-6 text-lg text-white"
+  >
+    <div className="text-left">
+      <p className="font-medium">{desc}</p>
+      <h2 className="text-2xl font-semibold">{title}</h2>
+    </div>
+    <ChevronRightIcon className="size-6" />
+  </Link>
+)

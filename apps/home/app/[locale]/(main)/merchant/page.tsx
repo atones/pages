@@ -14,14 +14,18 @@ export default function MerchantPage () {
       <hr className="my-32" />
       <H1 text="부가기능" />
       <div id="copy-cert">
-        <BigButtonGray href="https://candy-cert-copy.vercel.app" desc="공동인증서로 가입하려면" title="공동인증서 복사" />
+        <BigButtonGray href="https://certcopy.candypay.co.kr" desc="공동인증서로 가입하려면" title="공동인증서 복사" />
       </div>
     </div>
   )
 }
 
 const BigButtonGray = ({ desc, title, href }: { desc?: string; title: string; href: UrlObject | string }) => (
-  <Link href={href} className="flex w-full items-center justify-between rounded-lg bg-gray-100 p-6 text-lg">
+  <Link
+    href={href}
+    target="_blank"
+    className="flex w-full items-center justify-between rounded-lg bg-gray-100 p-6 text-lg"
+  >
     <div className="text-left">
       <p className="font-medium">{desc}</p>
       <h2 className="text-2xl font-semibold">{title}</h2>
@@ -33,6 +37,7 @@ const BigButtonGray = ({ desc, title, href }: { desc?: string; title: string; hr
 const BigButtonPrimary = ({ desc, title, href }: { desc?: string; title: string; href: UrlObject | string }) => (
   <Link
     href={href}
+    target="_blank"
     className="flex w-full items-center justify-between rounded-lg bg-primary-s5 p-6 text-lg text-white"
   >
     <div className="text-left">

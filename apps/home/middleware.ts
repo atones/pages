@@ -1,5 +1,5 @@
 import { createI18nMiddleware } from 'next-international/middleware'
-import { NextRequest, NextResponse, userAgent } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 const I18nMiddleware = createI18nMiddleware({
   locales: ['ko', 'en'],
@@ -8,16 +8,11 @@ const I18nMiddleware = createI18nMiddleware({
 })
 
 export function middleware (request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/download')) {
-    const { os: { name: os = '' } } = userAgent(request)
-    if (/iphone|ipad|ipod|mac/i.test(os)) return NextResponse.redirect('https://apps.apple.com/us/app/캔디페이/id6463577769')
-    if (/android/i.test(os)) return NextResponse.redirect('https://play.google.com/store/apps/details?id=kr.co.candypay')
-    return NextResponse.redirect('https://candypay.co.kr')
+  if (['/terms', '/download', '/certcopy'].some(path => request.nextUrl.pathname.startsWith(path))) {
+    return NextResponse.next()
   }
 
-  if (!request.nextUrl.pathname.startsWith('/terms')) {
-    return I18nMiddleware(request as unknown as never)
-  }
+  return I18nMiddleware(request as unknown as never)
 }
 
 export const config = {

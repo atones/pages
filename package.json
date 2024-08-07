@@ -6,10 +6,9 @@
     "@nx/next": "19.5.0",
     "@repo/typescript-config": "workspace:*",
     "eslint": "~8.57.0",
-    "nx": "19.5.0",
-    "turbo": "latest"
+    "nx": "19.5.0"
   },
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.7.0",
   "engines": {
     "node": ">=18"
   },

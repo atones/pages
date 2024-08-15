@@ -27,7 +27,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         >
           {t('download')}
         </Link>
-        <Image unoptimized src="/cards.png" alt="cards" width={720} height={720} />
+        <Image priority unoptimized src="/cards.png" alt="cards" width={720} height={720} />
       </section>
       <section
         className="hidden w-full max-w-screen-desktop flex-col items-center gap-5 px-6 py-9
@@ -111,10 +111,10 @@ const H1 = ({ text }: { text: string }) => (
 const Sponsors = () => (
   <section id="sponsors" className="flex w-full flex-col items-center p-6 desktop:px-8">
     <div className="grid grid-cols-2 grid-rows-2 items-center justify-between desktop:flex">
-      <Image src="/중소벤처기업부.svg" alt="중소벤처기업부" unoptimized width={240} height={240} />
-      <Image src="/구글창구.webp" alt="구글창구" unoptimized width={240} height={240} />
-      <Image src="/서울대기술지주.jpg" alt="서울대기술지주" unoptimized width={240} height={240} />
-      <Image src="/한국핀테크지원센터.png" alt="한국핀테크지원센터" unoptimized width={240} height={240} />
+      <Image src="/중소벤처기업부.svg" alt="중소벤처기업부" quality="100" width={240} height={240} />
+      <Image src="/구글창구.webp" alt="구글창구" quality="100" width={240} height={240} />
+      <Image src="/서울대기술지주.webp" alt="서울대기술지주" quality="100" width={240} height={240} />
+      <Image src="/한국핀테크지원센터.webp" alt="한국핀테크지원센터" quality="100" width={240} height={240} />
     </div>
     <p className="text-gray-400 font-medium">
       캔디페이는 중소기업벤처부, Google Play 창구, 서울대 기술지주회사, 한국핀테크지원센터와 함께합니다.

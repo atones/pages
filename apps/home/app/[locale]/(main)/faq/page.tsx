@@ -14,6 +14,12 @@ import { H1 } from '@/components/typography'
 import { objectEntries, objectKeys } from '@toss/utils'
 import { getStaticParams } from '@/locales/server'
 import { setStaticParamsLocale } from 'next-international/server'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '자주 묻는 질문 - 캔디페이',
+  description: '캔디페이에 대한 자주 묻는 질문을 확인해보세요.'
+}
 
 const faqItems = {
   결제: [

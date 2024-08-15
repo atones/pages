@@ -2,6 +2,12 @@ import { H1 } from '@/components/typography'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import type { UrlObject } from 'node:url'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '가맹 문의 - 캔디페이',
+  description: '개인사업자, 프리랜서, 대기업, 프랜차이즈 모두 캔디페이에 가맹하고 싶다면 지금 바로 문의하세요.'
+}
 
 export default function MerchantPage () {
   return (

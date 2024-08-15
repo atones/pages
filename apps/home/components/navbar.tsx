@@ -1,6 +1,7 @@
 'use client'
 import { useScopedI18n } from '@/locales/client'
 import Link from 'next/link'
+import Image from 'next/image'
 import LocaleSelector from '@/components/locale'
 import { Bars3Icon } from '@heroicons/react/24/outline'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
@@ -14,7 +15,9 @@ const CandyNavbar = () => {
         className="mx-auto flex min-h-12 w-full max-w-screen-desktop items-center justify-between px-6 desktop:min-h-16 desktop:px-8"
       >
         <Link className="mr-4" href="/">
-          <img src="/logo.svg" className="mr-3 h-5 desktop:h-6" alt="Candypay Logo" />
+          <Image
+            unoptimized width="125" height="24" src="/logo.svg" className="mr-3 h-5 desktop:h-6" alt="Candypay Logo"
+          />
         </Link>
         <Menu>
           <MenuButton className="block desktop:hidden" aria-label="Toggle Menu">

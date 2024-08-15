@@ -2,13 +2,12 @@
   "name": "micropages",
   "private": true,
   "devDependencies": {
-    "@nx/eslint": "19.5.0",
-    "@nx/next": "19.5.0",
-    "@repo/typescript-config": "workspace:*",
-    "eslint": "~8.57.0",
-    "nx": "19.5.0"
+    "nx": "19.5.0",
+    "@nx/eslint": "19.5.7",
+    "@nx/next": "19.5.7",
+    "@repo/typescript-config": "workspace:*"
   },
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.7.1",
   "engines": {
     "node": ">=18"
   },

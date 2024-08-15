@@ -2,6 +2,11 @@ import type { PropsWithChildren } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { I18nProviderClient } from '@/locales/client'
+import { getStaticParams } from '@/locales/server'
+
+export function generateStaticParams () {
+  return getStaticParams()
+}
 
 export default function MainLayout ({ params: { locale }, children }: PropsWithChildren<{
   params: { locale: string }

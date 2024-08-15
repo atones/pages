@@ -2,14 +2,10 @@ import Image from 'next/image'
 import { convertNewlineToJSX } from '@toss/react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { setStaticParamsLocale } from 'next-international/server'
-import { getScopedI18n, getStaticParams } from '@/locales/server'
+import { getScopedI18n } from '@/locales/server'
 import Link from 'next/link'
 
 const toJSX = convertNewlineToJSX
-
-export function generateStaticParams () {
-  return getStaticParams()
-}
 
 export default async function MyPage ({ params: { locale } }: { params: { locale: string } }) {
   setStaticParamsLocale(locale)

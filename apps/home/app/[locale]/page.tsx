@@ -116,7 +116,7 @@ const Sponsors = () => (
       <Image src="/서울대기술지주.webp" alt="서울대기술지주" quality="100" width={240} height={240} />
       <Image src="/한국핀테크지원센터.webp" alt="한국핀테크지원센터" quality="100" width={240} height={240} />
     </div>
-    <p className="text-gray-400 font-medium">
+    <p className="text-gray-400 font-medium text-sm text-center">
       캔디페이는 중소기업벤처부, Google Play 창구, 서울대 기술지주회사, 한국핀테크지원센터와 함께합니다.
     </p>
   </section>

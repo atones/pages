@@ -27,7 +27,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
         >
           {t('download')}
         </Link>
-        <Image className="m-12" priority unoptimized src="/cards.png" alt="cards" width={640} height={460} />
+        <Image className="m-12" priority quality="100" src="/cards.png" alt="cards" width={640} height={460} />
       </section>
       <section
         className="hidden w-full max-w-screen-desktop flex-col items-center gap-5 px-6 py-9

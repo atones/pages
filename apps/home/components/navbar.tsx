@@ -15,9 +15,7 @@ const CandyNavbar = () => {
         className="mx-auto flex min-h-12 w-full max-w-screen-desktop items-center justify-between px-6 desktop:min-h-16 desktop:px-8"
       >
         <Link className="mr-4" href="/">
-          <Image
-            unoptimized width="125" height="24" src="/logo.svg" className="mr-3 h-5 desktop:h-6" alt="Candypay Logo"
-          />
+          <Image width="125" height="24" src="/logo.svg" className="mr-3 h-5 desktop:h-6" alt="Candypay Logo" />
         </Link>
         <Menu>
           <MenuButton className="block desktop:hidden" aria-label="Toggle Menu">

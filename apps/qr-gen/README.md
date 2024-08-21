@@ -1,19 +1,4 @@
 # qr-gen
 
-## Developing
-
-```bash
-npm run dev
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+테이블주문 QR을 발급하는 서비스입니다.
+PDF(formtec 3610 규격), PNG 형태로 다운받을 수 있습니다.

@@ -16,7 +16,7 @@
 </script>
 <script type="module">
   const params = new URLSearchParams(window.location.search)
-  export const pathname = params.get('pathname') || ''
+  const pathname = params.get('pathname') || ''
 
   const deeplink = `candypay://${pathname}`
 
@@ -30,6 +30,8 @@
   window.location.href = deeplink
 </script>
 <script type="module">
+  const params = new URLSearchParams(window.location.search)
+  const pathname = params.get('pathname') || ''
   const p = document.getElementById('view-pathname')
   p.textContent = `pathname: ${pathname}`
 </script>

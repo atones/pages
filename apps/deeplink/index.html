@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>캔디페이 앱 열기</title>
+  <meta content="캔디페이 딥링크 fallback 페이지" name="description">
+</head>
+<body>
+<script type="module">
+  export const getStoreUrl = (agent) => {
+    if (/android/i.test(agent)) return 'https://play.google.com/store/apps/details?id=kr.co.candypay'
+    else if (/iPad|iPhone|iPod/.test(agent) && !window.MSStream) return 'https://apps.apple.com/us/app/캔디페이/id6463577769'
+    else return 'https://www.candypay.co.kr'
+  }
+</script>
+<script>
+  const urlParams = new URLSearchParams(window.location.search)
+  const pathname = urlParams.get('pathname') || ''
+
+  const deeplink = `candypay://${pathname}`
+
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera
+  const storeUrl = getStoreUrl(userAgent)
+
+  setTimeout(() => {
+    window.location.href = storeUrl
+  }, 1000)
+
+  window.location.href = deeplink
+</script>
+
+<main>
+  <p>캔디페이를 실행 중이에요.</p>
+  <p>앱이 실행되지 않는다면 아래 링크를 클릭해주세요.</p>
+  <a href="https://www.candypay.co.kr">홈페이지</a>
+  <a href="https://play.google.com/store/apps/details?id=kr.co.candypay">Google Play Store</a>
+  <a href="https://apps.apple.com/us/app/캔디페이/id6463577769">Apple App Store</a>
+</main>
+</body>
+</html>

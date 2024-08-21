@@ -31,6 +31,8 @@ importers:
         specifier: 19.6.1
         version: 19.6.1
 
+  apps/deeplink: {}
+
   apps/first-cashback:
     dependencies:
       '@headlessui/react':

@@ -14,9 +14,9 @@
     else return 'https://www.candypay.co.kr'
   }
 </script>
-<script>
-  const urlParams = new URLSearchParams(window.location.search)
-  const pathname = urlParams.get('pathname') || ''
+<script type="module">
+  const params = new URLSearchParams(window.location.search)
+  export const pathname = params.get('pathname') || ''
 
   const deeplink = `candypay://${pathname}`
 
@@ -29,9 +29,14 @@
 
   window.location.href = deeplink
 </script>
+<script type="module">
+  const p = document.getElementById('view-pathname')
+  p.textContent = `pathname: ${pathname}`
+</script>
 
 <main>
   <p>캔디페이를 실행 중이에요.</p>
+  <p id="view-pathname"></p>
   <p>앱이 실행되지 않는다면 아래 링크를 클릭해주세요.</p>
   <p>
     <a href="https://www.candypay.co.kr">홈페이지</a>

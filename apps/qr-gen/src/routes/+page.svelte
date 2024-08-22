@@ -7,7 +7,7 @@
 
   export let data: { accountId: string, tables: number }
 
-  async function downloadFormtecToPdf() {
+  async function downloadFormtecToPdf () {
     const pages = document.querySelectorAll('#formtec > .formtec-3610')
     const dataUrls = await Promise.all(Array.from(pages).map((page) => toPng(page as HTMLDivElement)))
 
@@ -32,7 +32,7 @@
 </style>
 
 <header class="p-5 border-b border-gray-200 flex items-center justify-center">
-  <h1 class="text-2xl font-semibold">테이블오더 QR스티커 발급</h1>
+  <h1 class="text-2xl font-semibold">테이블오더 QR 스티커 발급</h1>
 </header>
 <main class="p-5 flex flex-col gap-5">
   <button
@@ -41,7 +41,8 @@
   >
     PDF 다운로드
   </button>
-  <p></p>
+  <p class="text-sm text-gray-500 mt-4">폼텍 3610 규격입니다. QR용 방수지를 사용해주세요.</p>
+  <p class="text-sm text-gray-500 mt-4">다운로드시 3초 이상 기다려주세요.</p>
   <Formtec
     component={TableQR}
     params={range(0, data.tables + 1).map((table) => ({ accountId: data.accountId, table }))}

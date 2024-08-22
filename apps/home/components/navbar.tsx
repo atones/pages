@@ -25,7 +25,7 @@ const CandyNavbar = () => {
           </MenuButton>
           <MenuItems
             anchor={{ to: 'bottom', gap: 13 }}
-            className="top-2 w-full bg-white"
+            className="top-2 w-full bg-white border-b border-gray-300"
           >
             <MenuItem>
               <Link className="block px-5 py-4 text-gray-600 hover:bg-gray-100" href="/faq">

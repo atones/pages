@@ -11,6 +11,12 @@ export function middleware (request: NextRequest) {
   return I18nMiddleware(request as unknown as never)
 }
 
+const imageExts = ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp']
+const staticExts = ['xml', 'txt', 'json', 'ico']
+const exts = imageExts.concat(staticExts)
+
 export const config = {
-  matcher: ['/', '/faq', '/merchant']
+  matcher: [
+    `/((?!api|static|_next|.*\\.(${exts.join('|')})$).*)`
+  ]
 }

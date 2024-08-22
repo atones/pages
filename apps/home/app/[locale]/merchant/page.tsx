@@ -14,7 +14,7 @@ export default function MerchantPage () {
     <div className="my-24 flex w-full max-w-screen-desktop flex-col px-6 desktop:px-8">
       <H1 text="가맹 문의" />
       <div className="flex flex-col gap-4">
-        <BigButtonPrimary href="/download" desc="개인사업자/프리랜서" title="앱 다운로드" />
+        <BigButtonPrimary href="/download" desc="사업자/프리랜서" title="앱 다운로드" />
         <BigButtonGray href="https://2igx1efz.forms.app/candy-partener-inquiry" desc="대기업/프랜차이즈" title="제휴 문의" />
       </div>
       <hr className="my-32" />

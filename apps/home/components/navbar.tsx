@@ -37,6 +37,11 @@ const CandyNavbar = () => {
                 {t('merchant')}
               </Link>
             </MenuItem>
+            <MenuItem>
+              <Link className="block px-5 py-4 text-gray-600 hover:bg-gray-100" href="https://certcopy.candypay.co.kr">
+                공동인증
+              </Link>
+            </MenuItem>
             <MenuItem as="div" className="px-5 py-4 hover:bg-gray-100">
               <LocaleSelector />
             </MenuItem>
@@ -50,9 +55,17 @@ const CandyNavbar = () => {
                 {t('faq')}
               </Link>
             </li>
-            <li className="mr-12">
+            <li>
               <Link className="block rounded-lg px-4 py-3 text-gray-600 hover:bg-gray-100" href="/merchant">
                 {t('merchant')}
+              </Link>
+            </li>
+            <li className="mr-12">
+              <Link
+                className="block rounded-lg px-4 py-3 text-gray-600 hover:bg-gray-100"
+                href="https://certcopy.candypay.co.kr"
+              >
+                공동인증
               </Link>
             </li>
             <LocaleSelector />

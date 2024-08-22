@@ -7,7 +7,8 @@
 
   let canvas: HTMLCanvasElement
 
-  const uri = `candypay://market/info/${accountId}?table=${table}`
+  const pathname = `market/info/${accountId}?table=${table}`
+  const uri = `dl.candypay.co.kr?pn=${pathname}`
 
   onMount(() => {
     if (!canvas) return

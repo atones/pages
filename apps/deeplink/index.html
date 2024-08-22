@@ -7,12 +7,25 @@
   <link href="favicon.ico" rel="icon" />
   <meta content="캔디페이 딥링크 fallback 페이지" name="description">
   <style>
-      main {
       html {
           margin: 0;
           padding: 0;
           font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       }
+
+      body {
+          margin: 0;
+          padding: 0;
+          background: #EBEDEF;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 100%;
+          min-height: 100vh;
+      }
+
+      main {
+          margin: auto;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -20,50 +33,74 @@
 
       /* 앱 로고 */
       img.logo {
-          width: 100px;
-          height: 100px;
-          margin-top: 50vh;
-          border-radius: 10%;
+          margin-bottom: 20px;
+          width: 90px;
+          height: 90px;
+          border-radius: 15%;
+          background: white;
+          box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+
+      main > h1 {
+          margin: 0;
+          font-size: 1.25rem;
+      }
+
+      main > p {
+          margin: 3px 0 0 0;
+          color: #999;
+      }
+
+      main > button {
+          appearance: none;
+          margin-top: 35px;
+          background: #FF7720;
+          color: white;
+          border: none;
+          padding: 14px 40px 15px 40px;
+          font-size: 18px;
+          border-radius: 9999px;
+      }
+
+      button {
+          cursor: pointer;
       }
   </style>
 </head>
 <body>
-<script type="module">
-  export const getStoreUrl = (agent) => {
+<script>
+  const getStoreUrl = (agent) => {
     if (/android/i.test(agent)) return 'https://play.google.com/store/apps/details?id=kr.co.candypay'
     else if (/iPad|iPhone|iPod/.test(agent) && !window.MSStream) return 'https://apps.apple.com/us/app/캔디페이/id6463577769'
     else return 'https://www.candypay.co.kr'
   }
 
-  export const openDeeplink = (pathname) => {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera
+  const storeUrl = getStoreUrl(userAgent)
+
+  const openDeeplink = (pathname) => {
     const deeplink = `candypay://${pathname}`
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera
-    const storeUrl = getStoreUrl(userAgent)
+    const fallback = storeUrl
 
     setTimeout(() => {
-      window.location.href = storeUrl
-    }, 1000)
+      window.location.href = fallback
+    }, 2000)
 
     window.location.href = deeplink
   }
 </script>
-<script type="module">
+<script>
   const params = new URLSearchParams(window.location.search)
   const pathname = params.get('pathname') || ''
-
-  const deeplink = `candypay://${pathname}`
-
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera
-  const storeUrl = getStoreUrl(userAgent)
-
-  setTimeout(() => {
-    window.location.href = storeUrl
-  }, 1000)
-
-  window.location.href = deeplink
 </script>
+
 <main>
-  <img alt="candypay" class="logo" src="/favicon.ico" />
+  <img alt="candypay" class="logo" src="logo.png" />
+  <h1>캔디페이</h1>
+  <p>CANDYPAY</p>
+  <button onclick="openDeeplink(pathname)">앱 이용하기
+  </button>
 </main>
+
 </body>
 </html>

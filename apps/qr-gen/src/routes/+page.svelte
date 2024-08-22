@@ -41,8 +41,11 @@
   >
     PDF 다운로드
   </button>
-  <p class="text-sm text-gray-500 mt-4">폼텍 3610 규격입니다. QR용 방수지를 사용해주세요.</p>
-  <p class="text-sm text-gray-500 mt-4">다운로드시 3초 이상 기다려주세요.</p>
+  <p class="text-sm text-gray-500 mt-4 text-center">
+    폼텍 3610 규격입니다. QR용 방수지를 사용해주세요.
+    <br />
+    다운로드시 3초 이상 기다려주세요.
+  </p>
   <Formtec
     component={TableQR}
     params={range(0, data.tables + 1).map((table) => ({ accountId: data.accountId, table }))}

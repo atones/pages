@@ -8,7 +8,8 @@
   let canvas: HTMLCanvasElement
 
   const pathname = `market/info/${accountId}?table=${table}`
-  const uri = `dl.candypay.co.kr?pn=${pathname}`
+  // const uri = `dl.candypay.co.kr?pn=${pathname}`
+  const uri = `candypay://${pathname}`
 
   onMount(() => {
     if (!canvas) return

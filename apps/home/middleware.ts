@@ -16,7 +16,5 @@ const staticExts = ['xml', 'txt', 'json', 'ico']
 const exts = imageExts.concat(staticExts)
 
 export const config = {
-  matcher: [
-    `/((?!api|static|_next|.*\\.(${exts.join('|')})$).*)`
-  ]
+  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt|sitemap.xml).*)']
 }

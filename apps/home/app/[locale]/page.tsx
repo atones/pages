@@ -69,14 +69,22 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
           </TabList>
           <TabPanels>
             <TabPanel className="flex flex-col gap-12">
-              <ShowcaseGray title={t('func.customer.split.title')} desc={t('func.customer.split.desc')} />
-              <ShowcaseGray title={t('func.customer.dutch.title')} desc={t('func.customer.dutch.desc')} />
-              <ShowcaseGray title={t('func.customer.remote.title')} desc={t('func.customer.remote.desc')} />
+              <ShowcaseGray title={t('func.customer.split.title')} desc={t('func.customer.split.desc')} src="손님1.png" />
+              <ShowcaseGray title={t('func.customer.dutch.title')} desc={t('func.customer.dutch.desc')} src="손님2.png" />
+              <ShowcaseGray
+                title={t('func.customer.remote.title')} desc={t('func.customer.remote.desc')} src="손님3.png"
+              />
             </TabPanel>
             <TabPanel className="flex flex-col gap-12">
-              <ShowcaseGray title={t('func.merchant.split.title')} desc={t('func.merchant.split.desc')} />
-              <ShowcaseGray title={t('func.merchant.remote.title')} desc={t('func.merchant.remote.desc')} />
-              <ShowcaseGray title={t('func.merchant.kiosk.title')} desc={t('func.merchant.kiosk.desc')} />
+              <ShowcaseGray
+                title={t('func.merchant.split.title')} desc={t('func.merchant.split.desc')} src="사장님1.png"
+              />
+              <ShowcaseGray
+                title={t('func.merchant.remote.title')} desc={t('func.merchant.remote.desc')} src="사장님2.png"
+              />
+              <ShowcaseGray
+                title={t('func.merchant.kiosk.title')} desc={t('func.merchant.kiosk.desc')} src="사장님3.png"
+              />
             </TabPanel>
           </TabPanels>
         </TabGroup>
@@ -91,6 +99,7 @@ export default async function MyPage ({ params: { locale } }: { params: { locale
           <ShowcasePrimary
             title={t('func.pos.title')}
             desc={t('func.pos.desc')}
+            src="모두를위한.png"
           />
         </div>
       </section>
@@ -122,7 +131,7 @@ const Sponsors = () => (
   </section>
 )
 
-const ShowcaseGray = ({ title, desc }: { title: string, desc: string }) => (
+const ShowcaseGray = ({ title, desc, src }: { title: string, desc: string, src: string }) => (
   <article className="grid grid-cols-1 grid-rows-[1fr_auto] desktop:grid-cols-[1fr_auto] desktop:gap-12">
     <div className="mb-6 desktop:m-0">
       <h2
@@ -137,15 +146,18 @@ const ShowcaseGray = ({ title, desc }: { title: string, desc: string }) => (
         {convertNewlineToJSX(desc)}
       </span>
     </div>
-    <figure
-      className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-gray-200 desktop:w-[420px]"
-    >
-      1:1
-    </figure>
+    <Image
+      unoptimized
+      width={420}
+      height={420}
+      src={src}
+      alt={src}
+      className="aspect-square rounded-3xl bg-gray-100 grayscale"
+    />
   </article>
 )
 
-const ShowcasePrimary = ({ title, desc }: { title: string, desc: string }) => (
+const ShowcasePrimary = ({ title, desc, src }: { title: string, desc: string, src: string }) => (
   <section className="grid grid-cols-1 grid-rows-[1fr_auto] text-white desktop:grid-cols-[1fr_auto] desktop:gap-12">
     <div className="mb-6 desktop:m-0">
       <h2
@@ -160,10 +172,13 @@ const ShowcasePrimary = ({ title, desc }: { title: string, desc: string }) => (
         {convertNewlineToJSX(desc)}
       </p>
     </div>
-    <figure
-      className="flex aspect-square flex-col items-center justify-center rounded-3xl border border-white desktop:w-[420px]"
-    >
-      1:1 폰을 쥔 손 또는 행복한 자영업자
-    </figure>
+    <Image
+      unoptimized
+      width={420}
+      height={420}
+      src={src}
+      alt={src}
+      className="aspect-square rounded-3xl bg-gray-100"
+    />
   </section>
 )

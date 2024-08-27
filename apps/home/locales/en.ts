@@ -53,7 +53,7 @@ const home = {
       }
     },
     pos: {
-      title: 'My POS for everyone',
+      title: 'My credit card reader for everyone',
       desc: 'Support card payment with CandyPay for freelancers and business owners. You can pay with corporate cards and personal cards. Create new customer opportunities with card split payment.'
     }
   }

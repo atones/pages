@@ -7,6 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/.nx" />
       <excludeFolder url="file://$MODULE_DIR$/apps/home/out" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/merchant-console/.svelte-kit" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

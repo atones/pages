@@ -65,9 +65,9 @@
       name: 'Authenication',
       icon: LockSolid,
       children: {
-        'Sign in': '/authentication/sign-in',
-        'Sign up': '/authentication/sign-up',
-        'Profile lock': '/authentication/profile-lock'
+        'Sign in': '/(auth)/sign-in',
+        'Sign up': '/(auth)/sign-up',
+        'Profile lock': '/(auth)/profile-lock'
       }
     }
   ]

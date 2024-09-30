@@ -25,7 +25,7 @@
   } from 'flowbite-svelte-icons'
   import type { ComponentType } from 'svelte'
   import { sineIn } from 'svelte/easing'
-  import Products from '../../../data/product.json'
+  import Products from './product.json'
   import MetaTag from '$lib/components/MetaTag.svelte'
   import Delete from './Delete.svelte'
   import Product from './Product.svelte'

@@ -28,7 +28,6 @@
   description="Sign in example - Flowbite Svelte Admin Dashboard"
   path="/authentication/sign-in"
   subtitle="Sign in"
-  title="Flowbite Svelte Admin Dashboard - Sign in"
 />
 
 <SignIn

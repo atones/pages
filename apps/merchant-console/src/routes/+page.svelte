@@ -35,9 +35,9 @@
   on:submit={!smsSent ? sendSMS : onSubmit}
   site={{
     name: 'candypay',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    img: '/favicon.webp',
     link: '/',
-    imgAlt: 'FlowBite Logo'
+    imgAlt: 'Candypay Logo'
   }}
   title="본인인증"
 >

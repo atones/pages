@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Input, Radio, ButtonGroup } from 'flowbite-svelte'
-  import SignIn from '../utils/authentication/SignIn.svelte'
+  import SignIn from './utils/authentication/SignIn.svelte'
   import MetaTag from '$lib/components/MetaTag.svelte'
 
   let smsSent = false
